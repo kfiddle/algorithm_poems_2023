@@ -9,12 +9,14 @@
   position: relative;
   right: 14%;
   animation: spin infinite 4s linear;
+  mix-blend-mode: overlay;
 }
 
 .pennyFrame {
   position: relative;
   transform: translate(38%, -26%);
   z-index: 3;
+  filter: hue-rotate(90deg); 
 }
 
 .smallWheel {
