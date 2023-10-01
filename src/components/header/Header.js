@@ -15,11 +15,11 @@ const Header = () => {
   }, []);
 
   const letterArray = [
-    { letter: 'K', fontSize: '6rem' },
+    { letter: 'K', fontSize: '6.5rem' },
     'e',
     'n',
     ' ',
-    { letter: 'J', fontSize: '6rem' },
+    { letter: 'J', fontSize: '6.5rem' },
     'o',
     'h',
     'n',
@@ -31,8 +31,6 @@ const Header = () => {
 
   return (
     <div className={styles.headerContainer}>
-      {/* <div> */}
-      {/* </div> */}
       <div className={styles.nameAndSubTitle}>
         <h1 className={styles.header}>
           {letterArray.map((item, index) => (
@@ -48,11 +46,7 @@ const Header = () => {
             </span>
           ))}
         </h1>
-        {showSubtitle && (
-          <div>
-            <p className={styles.subtitle}>Full Stack Developer</p>
-          </div>
-        )}
+        <div><p className={styles.subtitle}>Full Stack Developer</p></div>
       </div>
     </div>
   );

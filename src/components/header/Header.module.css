@@ -3,11 +3,11 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   width: 100vw;
   overflow: hidden;
   position: relative;
-  margin-top: 2rem; /* Add more space between name and subtitle */
+  /* margin-top: 2rem; */
 }
 
 h1 {
@@ -16,7 +16,8 @@ h1 {
 }
 
 .nameAndSubTitle {
-  transform: translateX(-10%);
+  /* transform: translateX(-10%); */
+  margin-right: 20rem;
 }
 
 .header {
@@ -43,7 +44,7 @@ h1 {
 
 /* Adjust font weight and style for the subtitle */
 .subtitle {
-  transform: translateX(25%) scale(1.2); /* Apply a scale transformation */
+  transform: translateX(25%) scale(1.2); 
   color: transparent;
   font-size: 3rem; /* Adjust the font size */
   font-weight: lighter; /* Adjust font weight (e.g., normal, lighter, bold) */

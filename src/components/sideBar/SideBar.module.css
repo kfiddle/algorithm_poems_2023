@@ -1,0 +1,23 @@
+.sideBarDiv {
+  position: absolute;
+  margin-top: 30vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 40vw;
+  text-align: end;
+  transition: 1s cubic-bezier(0.4, 0, 0.4, 1);
+  animation: flare 3s linear;
+}
+
+@keyframes flare {
+  from {
+    background: red;
+    transform: translateX(-35vw);
+  }
+  to {
+    background: white;
+    transform: translateX(5vw);
+  }
+}

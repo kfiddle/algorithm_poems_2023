@@ -1,0 +1,10 @@
+.hiddenDiv {
+  position: absolute;
+
+  /* margin-top: 20vh; */
+  top: 0;
+  background: white;
+  width: 20vw;
+  height: 100vh;
+  transition: 1.5s cubic-bezier(0.4, 0, 0.4, 1);
+}

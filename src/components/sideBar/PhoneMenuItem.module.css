@@ -1,0 +1,15 @@
+.sideBarItem {
+  margin-left: 3vw;
+  margin-right: 0;
+  padding-right: .5rem;
+  color: white;
+  font-weight: 700;
+  font-size: rem;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.sideBarItem:hover {
+  color: gold;
+}
