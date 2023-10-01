@@ -1,0 +1,58 @@
+/* Header.module.css */
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem; /* Add more space between name and subtitle */
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  color: white;
+  font-size: 5rem;
+  font-family: 'Futura Light Italic';
+  display: inline-block;
+  position: relative;
+}
+
+.flyInLetter {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: flyIn 1s ease forwards;
+}
+
+@keyframes flyIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Adjust font weight and style for the subtitle */
+.subtitle {
+  /* position: absolute; */
+  /* bottom: 0;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+  color: transparent;
+  font-size: 3rem; /* Adjust the font size */
+  font-weight: lighter; /* Adjust font weight (e.g., normal, lighter, bold) */
+  /* font-style: italic;  */
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 1s; /* Delay the fog effect */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    color: white; /* Color of the fog text */
+  }
+}

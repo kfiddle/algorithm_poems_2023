@@ -1,0 +1,43 @@
+.bikeContainer {
+  position: fixed;
+  bottom: 10vh;
+  z-index: 3;
+  animation: rideWillow 30s linear;
+}
+
+.bigWheel {
+  position: relative;
+  right: 14%;
+  animation: spin infinite 4s linear;
+}
+
+.pennyFrame {
+  position: relative;
+  transform: translate(38%, -26%);
+  z-index: 3;
+}
+
+.smallWheel {
+  position: relative;
+  left: 32%;
+  bottom: 5%;
+  animation: spin infinite 1.6s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rideWillow {
+  from {
+    transform: translateX(-30vw);
+  }
+  to {
+    transform: translateX(140vw);
+  }
+}
