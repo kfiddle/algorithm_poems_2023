@@ -7,8 +7,11 @@ import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOff
 import bigWheel from './assets/bigWheel.png';
 import pennyFrame from './assets/pennyFrame.png';
 import smallWheel from './assets/smallWheel-01.png';
+import headshot from './assets/headShot.JPG';
+
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import SideBar from './components/sideBar/SideBar';
+import AboutPanel from './components/aboutPanel/AboutPanel';
 
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
@@ -54,7 +57,8 @@ function App() {
 
       <Header />
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
-      <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />
+      {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
+      {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
     </div>
   );
 }
