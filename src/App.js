@@ -12,6 +12,7 @@ import headshot from './assets/headShot.JPG';
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import SideBar from './components/sideBar/SideBar';
 import AboutPanel from './components/aboutPanel/AboutPanel';
+import ContactFormPanel from './components/contactFormPanel/ContactFormPanel';
 
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
@@ -59,6 +60,7 @@ function App() {
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
+      {clickedChoice === CONTACT && <ContactFormPanel/>}
     </div>
   );
 }
