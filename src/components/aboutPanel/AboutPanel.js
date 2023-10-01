@@ -37,28 +37,18 @@ const AboutPanel = (props) => {
           opacity: leftCurtainOpacity,
         }}
       >
-        <img src={props.headshot} className={styles.headShot} style={{ filter: `brightness(${imageFilter}%)` }} />
+        {/* <img src={props.headshot} className={styles.headShot} style={{ filter: `brightness(${imageFilter}%)` }} /> */}
+        <img src={props.headshot} className={styles.headShot} />
       </div>
       <div className={styles.storyCurtain} style={{ transform: `translateX(${rightCurtainPlace}vw)` }}>
         <div className={`${styles.storyBlock} ${styles.topThirdStory}`}>
-          <p>
-            Until recently, I spent each day as a professional violin player immersed in a centuries-old world. I spent
-            thousands of hours with a piece of technology built around the year 1800, and with it I explored a world of
-            language and ideas stretching back even further. I used to joke that my analog brain couldn't function
-            without pencil and paper.
-          </p>
+          <p>When I was a kid, I loved poetry.</p>
         </div>
         <div className={`${styles.storyBlock} ${styles.middleThirdStory}`}>
-          <p>
-            These days, I love to design apps and websites. My front-ends are built in React, and I connect these to a
-            back-end in Java, ...
-          </p>
+          <p>These days, I design full stack apps and websites,</p>
         </div>
         <div className={`${styles.storyBlock} ${styles.bottomThirdStory}`}>
-          <p>
-            ...and I've discovered that the worlds of classical music and software development aren't actually so
-            different.
-          </p>
+          <p>...and I've discovered that a world of digital poetry is possible <br />in things like  Javascript and Java.</p>
         </div>
       </div>
     </Fragment>
