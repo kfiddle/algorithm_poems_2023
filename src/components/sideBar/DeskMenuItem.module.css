@@ -8,7 +8,7 @@
   letter-spacing: 3px;
   cursor: pointer;
   transition: 0.4s;
-  animation: enterGlow 0.4s ease-out;
+  animation: enterGlow var(--delay) ease-out;
   color: white;
 }
 

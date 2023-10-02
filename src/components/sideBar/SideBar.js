@@ -7,7 +7,7 @@ import MenuItem from './MenuItem';
 import styles from './SideBar.module.css';
 
 const SideBar = ({ choice, menuList, visible }) => {
-  const [displayedMenuItems, setDisplayedMenuItems] = useState([])
+  const [displayedMenuItems, setDisplayedMenuItems] = useState([]);
   const [sideBarPlace, setSideBarPlace] = useState(-35);
   const [gradient, setGradient] = useState('#5a3939');
   const [hiddenDivSpot, setHiddenDivSpot] = useState(-30);
@@ -25,34 +25,26 @@ const SideBar = ({ choice, menuList, visible }) => {
     choice(chosen);
   };
 
-  // const optionsPopIn = () => {
-  //   const firstMenu = setTimeout(() => {
-  //     setMenu1(<MenuItem title={menuList[0]} chosen={clicked} />);
-  //   }, 300);
+  const optionsPopIn = () => {
+    const firstMenu = setTimeout(() => {
+      setMenu1(<MenuItem title={menuList[0]} chosen={clicked} delay={'2s'}/>);
+    }, 10);
 
-  //   const secondMenu = setTimeout(() => {
-  //     setMenu2(<MenuItem title={menuList[1]} chosen={clicked} />);
-  //   }, 600);
+    const secondMenu = setTimeout(() => {
+      setMenu2(<MenuItem title={menuList[1]} chosen={clicked} delay={'5s'}/>);
+    }, 10);
 
-  //   const thirdMenu = setTimeout(() => {
-  //     setMenu3(<MenuItem title={menuList[2]} chosen={clicked} />);
-  //   }, 900);
-  // };
+    const thirdMenu = setTimeout(() => {
+      setMenu3(<MenuItem title={menuList[2]} chosen={clicked} delay={'8s'}/>);
+    }, 10);
+  };
 
   let displayedMenuList = [];
   console.log(menuList);
 
   useEffect(() => {
     if (visible) {
-      // displayedMenuList = menuList.map((menuItem, index) => {
-      //   return setTimeout(() => <MenuItem title={menuList[2]} chosen={clicked} />, index * 300);
-      // });
-
-      menuList.forEach((menuItem, index) => {
-        return setTimeout(() => displayedMenuList.push(<MenuItem title={menuItem} chosen={clicked} />), index * 300);
-      });
-
-      // optionsPopIn();
+      optionsPopIn();
     }
   }, [visible]);
 
@@ -63,10 +55,9 @@ const SideBar = ({ choice, menuList, visible }) => {
   return (
     <Fragment>
       <div className={styles.sideBarDiv}>
-        {/* {menu1}
+        {menu1}
         {menu2}
-        {menu3} */}
-        {displayedMenuList}
+        {menu3}
       </div>
     </Fragment>
   );
