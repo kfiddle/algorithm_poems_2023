@@ -8,8 +8,16 @@
   letter-spacing: 3px;
   cursor: pointer;
   transition: 0.4s;
+  animation: enterGlow 0.4s ease-out;
+  color: white;
 }
 
 .sideBarItem:hover {
   color: darkblue;
+}
+
+@keyframes enterGlow {
+  from {
+    color: darkblue;
+  }
 }

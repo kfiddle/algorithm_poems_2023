@@ -1,89 +1,72 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment } from 'react';
 
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from 'react-responsive';
 
-import MenuItem from "./MenuItem";
+import MenuItem from './MenuItem';
 
-import styles from "./SideBar.module.css";
+import styles from './SideBar.module.css';
 
-const SideBar = (props) => {
+const SideBar = ({ choice, menuList, visible }) => {
+  const [displayedMenuItems, setDisplayedMenuItems] = useState([])
   const [sideBarPlace, setSideBarPlace] = useState(-35);
-  const [gradient, setGradient] = useState("#5a3939");
+  const [gradient, setGradient] = useState('#5a3939');
   const [hiddenDivSpot, setHiddenDivSpot] = useState(-30);
   const [hiddenDivAlive, setHiddenDivAlive] = useState(true);
 
-  const [menu1, setMenu1] = useState("");
-  const [menu2, setMenu2] = useState("");
-  const [menu3, setMenu3] = useState("");
+  const [menu1, setMenu1] = useState('');
+  const [menu2, setMenu2] = useState('');
+  const [menu3, setMenu3] = useState('');
 
-  const [options, setOptions] = useState(["", "", ""]);
+  const [options, setOptions] = useState(['', '', '']);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const clicked = (choice) => {
-    props.choice(choice);
+  const clicked = (chosen) => {
+    choice(chosen);
   };
 
-  const list = <MenuItem title={"About Me"} chosen={clicked} />;
+  // const optionsPopIn = () => {
+  //   const firstMenu = setTimeout(() => {
+  //     setMenu1(<MenuItem title={menuList[0]} chosen={clicked} />);
+  //   }, 300);
 
-  const optionsPopIn = () => {
-    const firstMenu = setTimeout(() => {
-      setMenu1(<MenuItem title={props.menuList[0]} chosen={clicked} />);
-    }, 300);
+  //   const secondMenu = setTimeout(() => {
+  //     setMenu2(<MenuItem title={menuList[1]} chosen={clicked} />);
+  //   }, 600);
 
-    const secondMenu = setTimeout(() => {
-      setMenu2(<MenuItem title={props.menuList[1]} chosen={clicked} />);
-    }, 600);
+  //   const thirdMenu = setTimeout(() => {
+  //     setMenu3(<MenuItem title={menuList[2]} chosen={clicked} />);
+  //   }, 900);
+  // };
 
-    const thirdMenu = setTimeout(() => {
-      setMenu3(<MenuItem title={props.menuList[2]} chosen={clicked} />);
-    }, 900);
-  };
+  let displayedMenuList = [];
+  console.log(menuList);
 
   useEffect(() => {
-    if (props.visible) {
-      optionsPopIn();
+    if (visible) {
+      // displayedMenuList = menuList.map((menuItem, index) => {
+      //   return setTimeout(() => <MenuItem title={menuList[2]} chosen={clicked} />, index * 300);
+      // });
 
-      setHiddenDivAlive(true);
-      setTimeout(() => {
-        setHiddenDivSpot(10);
-      }, 100);
+      menuList.forEach((menuItem, index) => {
+        return setTimeout(() => displayedMenuList.push(<MenuItem title={menuItem} chosen={clicked} />), index * 300);
+      });
 
-      setSideBarPlace(5);
-      setTimeout(() => {
-        // setGradient("#565655");
-        setGradient("#5a3939");
-      }, 500);
-    } else {
-      setMenu1("");
-      setMenu2("");
-      setMenu3("");
-      setSideBarPlace(-50);
-      setHiddenDivAlive(false);
-      setHiddenDivSpot(-20);
-      setGradient("#5a3939");
+      // optionsPopIn();
     }
-  }, [props.visible]);
+  }, [visible]);
 
-  const menuListToDisplay = props.menuList.map((menuItem) => (
+  const menuListToDisplay = menuList.map((menuItem) => (
     <MenuItem title={menuItem} chosen={clicked} key={Math.random()} />
   ));
 
   return (
     <Fragment>
-
-      <div
-        className={styles.sideBarDiv}
-        style={{
-          // transform: `translateX(${sideBarPlace}vw)`,
-          // background: `linear-gradient(to Right, white, ${gradient})`,
-          // width: !isMobile ? "22vw" : "40vw",
-          // marginTop: !isMobile ? "20vh" : "30vh",
-        }}
-      >
-        {menu1}
+      <div className={styles.sideBarDiv}>
+        {/* {menu1}
         {menu2}
-        {menu3}
+        {menu3} */}
+        {displayedMenuList}
       </div>
     </Fragment>
   );
