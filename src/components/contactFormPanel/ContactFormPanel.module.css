@@ -8,16 +8,9 @@
   height: 100vh;
 
   background: white;
-  background: linear-gradient(
-    #476097,
-    transparent,
-    white,
-    white,
-    white,
-    white,
-    transparent
-  );
+  background: linear-gradient(#1c2436, transparent, transparent, transparent);
   transition: 0.75s cubic-bezier(0.4, 0, 0.4, 1);
+  z-index: 5;
 }
 
 .contactBoxHeader {
@@ -28,7 +21,7 @@
   font-weight: 800;
   font-size: 2rem;
   margin: 1rem 0;
-
+  color: white;
 }
 
 .inputsBox {
@@ -38,24 +31,25 @@
 
 .input {
   background-color: rgb(166, 170, 175);
-  border: 0.1rem solid darkslateblue;
-  font-family: "Quicksand";
+  border: 0.1rem solid #1c2436;
+  border-radius: 3px;
+  font-family: 'Quicksand';
   width: 20vw;
   font-size: 1.5rem;
   padding: 1rem;
   transition: 1s;
 }
 
-
 textarea {
   background-color: rgb(166, 170, 175);
+  border-radius: 3px;
 }
 
 .submitButton {
   width: fit-content;
   background: none;
-  color: darkslateblue;
-  border: 4px solid darkslateblue;
+  color: #1c2436;
+  border: 4px solid #1c2436;
   padding: 4px 25px;
   margin: 1rem;
   border-radius: 100px;
@@ -68,7 +62,7 @@ textarea {
 }
 
 .submitButton:hover {
-  background: darkslateblue;
+  background: #1c2436;
   color: white;
 }
 
@@ -83,15 +77,17 @@ textarea {
 .myContactInfo h2 {
   font-weight: 900;
   font-size: 2rem;
+  color: #1c2436;
 }
 
 .messageInput {
   margin-top: 2rem;
-
   width: 25%;
   height: 20%;
 }
 
 .myEmail {
   margin: auto auto;
+  color: #1c2436;
+  font-weight: 900;
 }

@@ -24,6 +24,7 @@ function App() {
   const [showPennyFarthing, setShowPennyFarthing] = useState(false);
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
@@ -42,12 +43,16 @@ function App() {
 
   const choiceHandler = (chosen) => {
     setClickedChoice(chosen);
+    if (chosen == CONTACT || chosen == CURRENTPROJECTS) {
+      setIsHeaderVisible(false);
+    }
     setStripesClicked(false);
   };
 
   const stripesHandler = () => {
     setStripesClicked(!stripesClicked);
     setClickedChoice('');
+    setIsHeaderVisible(true)
   };
 
   return (
@@ -56,11 +61,11 @@ function App() {
         <WarrantOfficerStripes stripesHandler={stripesHandler} stripesClicked={stripesClicked} />
       </div>
 
-      <Header />
+      <Header isVisible={isHeaderVisible} />
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
-      {clickedChoice === CONTACT && <ContactFormPanel/>}
+      {clickedChoice === CONTACT && <ContactFormPanel />}
     </div>
   );
 }

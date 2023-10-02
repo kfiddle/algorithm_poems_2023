@@ -2,17 +2,23 @@ import React, { useState, useEffect } from 'react';
 import WarrantOfficerStripes from '../warrantOfficerStripes/WarrantOfficerStripes';
 import styles from './Header.module.css';
 
-const Header = () => {
+const Header = ({ isVisible }) => {
   const [showSubtitle, setShowSubtitle] = useState(false);
+  const [isVisibleClass, setIsVisibleClass] = useState('');
 
   useEffect(() => {
-    // Delay showing the subtitle after a certain time (e.g., 1.5 seconds)
     const subtitleTimeout = setTimeout(() => {
       setShowSubtitle(true);
     }, 1500);
 
     return () => clearTimeout(subtitleTimeout);
   }, []);
+
+  useEffect(() => {
+    if (isVisible) setIsVisibleClass(styles.visible);
+    if (!isVisible) setIsVisibleClass(styles.hidden);
+    console.log(isVisible);
+  }, [isVisible]);
 
   const letterArray = [
     { letter: 'K', fontSize: '6.5rem' },
@@ -32,7 +38,7 @@ const Header = () => {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.nameAndSubTitle}>
-        <h1 className={styles.header}>
+        <h1 className={`${styles.header} ${isVisibleClass}`}>
           {letterArray.map((item, index) => (
             <span
               key={index}
@@ -46,7 +52,9 @@ const Header = () => {
             </span>
           ))}
         </h1>
-        <div><p className={styles.subtitle}>Full Stack Developer</p></div>
+        <div className={isVisibleClass}>
+          <p className={styles.subtitle}>Full Stack Developer</p>
+        </div>
       </div>
     </div>
   );

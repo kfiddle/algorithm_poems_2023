@@ -1,23 +1,24 @@
-import { useState, useEffect, useRef, useReducer } from "react";
+import { useState, useEffect, useRef, useReducer } from 'react';
 
-import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from 'react-responsive';
 
-import useDetailSpeller from "../../hooks/useDetailSpeller";
+import useDetailSpeller from '../../hooks/useDetailSpeller';
 
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 
-import deskStyles from "./ContactFormPanel.module.css";
-import phoneStyles from "./PhoneContactForm.module.css";
+import deskStyles from './ContactFormPanel.module.css';
+import phoneStyles from './PhoneContactForm.module.css';
 
-const userId = "user_ziX5oSLNJRahUxs9dz2xC";
-const serviceId = "service_whc7i1l";
+// ('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
 
-const templateId = "template_xhux42i";
+const userId = 'user_ziX5oSLNJRahUxs9dz2xC';
+const serviceId = 'service_6d5kpau';
 
-const testTemplateId = "template_38pylf2";
+const templateId = 'template_xhux42i';
 
-const greeting =
-  " Feel free to share as much, (or as little), information as you'd like here";
+const testTemplateId = 'template_38pylf2';
+
+const greeting = " Feel free to share as much, (or as little), information as you'd like here";
 
 const initialPlaces = {
   nameSpot: 100,
@@ -25,14 +26,14 @@ const initialPlaces = {
   phoneSpot: 100,
   contactInfo: 100,
 };
-const initialFormState = { name: "", email: "", message: "" };
+const initialFormState = { name: '', email: '', message: '' };
 
 const inputReducer = (state, action) => {
-  if (action.type === "name") {
+  if (action.type === 'name') {
     return { ...state, name: action.name };
-  } else if (action.type === "email") {
+  } else if (action.type === 'email') {
     return { ...state, email: action.email };
-  } else if (action.type === "message") {
+  } else if (action.type === 'message') {
     return { ...state, message: action.message };
   } else {
     return initialFormState;
@@ -43,17 +44,14 @@ const ContactFormPanel = () => {
   const [contactPanelPlace, setContactPanelPlace] = useState(100);
   const [inputPlaces, setInputPlaces] = useState(initialPlaces);
 
-  const [foneNumber, setfoneNumber] = useState("");
+  const [foneNumber, setfoneNumber] = useState('');
 
-  const [inputs, setInputDispatcher] = useReducer(
-    inputReducer,
-    initialFormState
-  );
+  const [inputs, setInputDispatcher] = useReducer(inputReducer, initialFormState);
 
   const [emptySubmission, setEmptySubmission] = useState(false);
   const [headerText, setHeaderText] = useState(greeting);
 
-  const buttonText = useDetailSpeller(emptySubmission, "Nice try...", "Submit");
+  const buttonText = useDetailSpeller(emptySubmission, 'Nice try...', 'Submit');
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -61,7 +59,7 @@ const ContactFormPanel = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setContactPanelPlace(15);
+      setContactPanelPlace(-30);
     }, 50);
 
     setTimeout(() => {
@@ -88,11 +86,8 @@ const ContactFormPanel = () => {
       return;
     }
 
-    if (
-      (event.target.value.length === 3 || event.target.value.length === 7) &&
-      !isNaN(event.nativeEvent.data)
-    ) {
-      setfoneNumber((previous) => event.target.value + "-");
+    if ((event.target.value.length === 3 || event.target.value.length === 7) && !isNaN(event.nativeEvent.data)) {
+      setfoneNumber((previous) => event.target.value + '-');
     } else {
       setfoneNumber((previous) => event.target.value);
     }
@@ -100,10 +95,7 @@ const ContactFormPanel = () => {
 
   const checkForDelete = (event) => {
     setEmptySubmission(false);
-    if (
-      event.code === "Backspace" &&
-      foneNumber[foneNumber.length - 1] === "-"
-    ) {
+    if (event.code === 'Backspace' && foneNumber[foneNumber.length - 1] === '-') {
       setfoneNumber((previous) => previous.slice(0, -1));
     }
   };
@@ -126,24 +118,22 @@ const ContactFormPanel = () => {
       return;
     }
 
-    const testContact = {
-      toEmail: "chris@eriephil.com",
-      message: "CN, if you actually get this, it means I can email from a button on this app",
-    };
-
-    // emailjs.send(serviceId, templateId, contactInfo, userId);
-    emailjs.send(serviceId, testTemplateId, testContact, userId);
-
-    setfoneNumber("");
-    setInputDispatcher({ type: "reset" });
-    setHeaderText("Thank you for reaching out!");
+    emailjs.send(serviceId, templateId, contactInfo, userId).then(
+      (result) => {
+        if (result.text === 'OK') {
+          setfoneNumber('');
+          setInputDispatcher({ type: 'reset' });
+          setHeaderText('Thank you for reaching out!');
+        }
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
-    <div
-      className={styles.contactBox}
-      style={{ transform: `translateY(${contactPanelPlace}vh)` }}
-    >
+    <div className={styles.contactBox} style={{ transform: `translateY(${contactPanelPlace}vh)` }}>
       <div className={styles.contactBoxHeader}>
         <h2 className={styles.h2}>{headerText}</h2>
       </div>
@@ -151,27 +141,27 @@ const ContactFormPanel = () => {
       <div className={styles.inputsBox}>
         <input
           className={`${styles.input} ${styles.nameInput}`}
-          placeholder={"Name"}
+          placeholder={'Name'}
           style={{ transform: `translateX(${inputPlaces.nameSpot}vw)` }}
           onChange={(event) => {
-            setInputDispatcher({ type: "name", name: event.target.value });
+            setInputDispatcher({ type: 'name', name: event.target.value });
             setEmptySubmission(false);
           }}
           value={inputs.name}
         ></input>
         <input
           className={`${styles.input} ${styles.emailInput}`}
-          placeholder={"Email"}
+          placeholder={'Email'}
           style={{ transform: `translateX(${inputPlaces.emailSpot}vw)` }}
           onChange={(event) => {
-            setInputDispatcher({ type: "email", email: event.target.value });
+            setInputDispatcher({ type: 'email', email: event.target.value });
             setEmptySubmission(false);
           }}
           value={inputs.email}
         ></input>
         <input
           className={`${styles.input} ${styles.phoneInput}`}
-          placeholder={"Phone Number"}
+          placeholder={'Phone Number'}
           style={{ transform: `translateX(${inputPlaces.phoneSpot}vw)` }}
           onChange={formatNumber}
           onKeyDown={checkForDelete}
@@ -183,7 +173,7 @@ const ContactFormPanel = () => {
         className={styles.messageInput}
         placeholder="leave me a message ..."
         onChange={(event) => {
-          setInputDispatcher({ type: "message", message: event.target.value });
+          setInputDispatcher({ type: 'message', message: event.target.value });
           setEmptySubmission(false);
         }}
         value={inputs.message}
@@ -193,10 +183,7 @@ const ContactFormPanel = () => {
         {buttonText}
       </button>
 
-      <div
-        className={styles.myContactInfo}
-        style={{ transform: `translateY(${inputPlaces.contactInfo}vh)` }}
-      >
+      <div className={styles.myContactInfo} style={{ transform: `translateY(${inputPlaces.contactInfo}vh)` }}>
         <h2>Or simply write me at...</h2>
         <h1 className={styles.myEmail}>kenjsoftware@gmail.com</h1>
       </div>

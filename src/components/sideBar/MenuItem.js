@@ -12,7 +12,7 @@ const MenuItem = (props) => {
   const styles = !isMobile ? deskStyles : phoneStyles;
 
   const darkLetters = {
-    color: "gold",
+    color: "darkBlue",
     fontSize: !isMobile ? "1.8rem" : "1.3rem",
   };
 

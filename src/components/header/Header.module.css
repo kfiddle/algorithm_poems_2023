@@ -20,6 +20,17 @@ h1 {
   margin-right: 20rem;
 }
 
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 2s ease, transform 2s ease; /* Adjust the transition duration */
+}
+
 .header {
   color: white;
   font-size: 5rem;
@@ -44,7 +55,7 @@ h1 {
 
 /* Adjust font weight and style for the subtitle */
 .subtitle {
-  transform: translateX(25%) scale(1.2); 
+  transform: translateX(25%) scale(1.2);
   color: transparent;
   font-size: 3rem; /* Adjust the font size */
   font-weight: lighter; /* Adjust font weight (e.g., normal, lighter, bold) */
