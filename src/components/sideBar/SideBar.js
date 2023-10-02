@@ -71,7 +71,6 @@ const SideBar = (props) => {
 
   return (
     <Fragment>
-      {/* {hiddenDivAlive && <HiddenDiv placement={hiddenDivSpot} />} */}
 
       <div
         className={styles.sideBarDiv}

@@ -13,6 +13,7 @@ import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import SideBar from './components/sideBar/SideBar';
 import AboutPanel from './components/aboutPanel/AboutPanel';
 import ContactFormPanel from './components/contactFormPanel/ContactFormPanel';
+import Projects from './components/projects/Projects';
 
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
@@ -52,7 +53,7 @@ function App() {
   const stripesHandler = () => {
     setStripesClicked(!stripesClicked);
     setClickedChoice('');
-    setIsHeaderVisible(true)
+    setIsHeaderVisible(true);
   };
 
   return (
@@ -66,6 +67,7 @@ function App() {
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
+      {clickedChoice === CURRENTPROJECTS && <Projects />}
     </div>
   );
 }
