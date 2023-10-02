@@ -59,7 +59,7 @@ const ContactFormPanel = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setContactPanelPlace(-30);
+      setContactPanelPlace(10);
     }, 50);
 
     setTimeout(() => {

@@ -6,8 +6,7 @@
   justify-content: flex-end;
   width: 100vw;
   overflow: hidden;
-  position: relative;
-  /* margin-top: 2rem; */
+  position: fixed;
 }
 
 h1 {

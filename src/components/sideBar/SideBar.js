@@ -40,7 +40,6 @@ const SideBar = ({ choice, menuList, visible }) => {
   };
 
   let displayedMenuList = [];
-  console.log(menuList);
 
   useEffect(() => {
     if (visible) {
