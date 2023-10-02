@@ -31,11 +31,11 @@ const SideBar = ({ choice, menuList, visible }) => {
     }, 10);
 
     const secondMenu = setTimeout(() => {
-      setMenu2(<MenuItem title={menuList[1]} chosen={clicked} delay={'5s'}/>);
+      setMenu2(<MenuItem title={menuList[1]} chosen={clicked} delay={'4s'}/>);
     }, 10);
 
     const thirdMenu = setTimeout(() => {
-      setMenu3(<MenuItem title={menuList[2]} chosen={clicked} delay={'8s'}/>);
+      setMenu3(<MenuItem title={menuList[2]} chosen={clicked} delay={'6s'}/>);
     }, 10);
   };
 

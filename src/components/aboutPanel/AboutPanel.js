@@ -41,18 +41,20 @@ const AboutPanel = (props) => {
         <img src={props.headshot} className={styles.headShot} />
       </div>
       <div className={styles.storyCurtain} style={{ transform: `translateX(${rightCurtainPlace}vw)` }}>
-        <div className={`${styles.storyBlock} ${styles.topThirdStory}`}>
-          <p>When I was a kid, I loved poetry.</p>
-        </div>
-        <div className={`${styles.storyBlock} ${styles.middleThirdStory}`}>
-          <p>These days, I design full stack apps and websites,</p>
-        </div>
-        <div className={`${styles.storyBlock} ${styles.bottomThirdStory}`}>
-          <p>...and I've discovered that a world of digital poetry is possible <br />in things like  Javascript and Java.</p>
-        </div>
+        When I was a kid, I loved poetry. These days, I love a different kind of poetry- designing full stack apps and websites. I am happiest working in
+        React and Node.js or Java, and I prefer building frontends that look original- not like so many of the cookie
+        cutter sites we see every day. I've discovered that a world of digital poetry is possible
+        in things like Javascript and Java.
       </div>
     </Fragment>
   );
 };
 
 export default AboutPanel;
+
+// When I was a kid, I loved poetry.
+// These days, I design full stack apps and websites. I am happiest working in React and Node.js or Java.
+// <br />I also prefer building frontends that look original- not like so many of the cookie cutter sites we
+// see every day.
+// ...and I've discovered that a world of digital poetry is possible <br />
+// in things like Javascript and Java.
