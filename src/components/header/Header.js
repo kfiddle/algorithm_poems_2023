@@ -17,7 +17,6 @@ const Header = ({ isVisible }) => {
   useEffect(() => {
     if (isVisible) setIsVisibleClass(styles.visible);
     if (!isVisible) setIsVisibleClass(styles.hidden);
-    console.log(isVisible);
   }, [isVisible]);
 
   const letterArray = [
