@@ -1,7 +1,6 @@
 import styles from './RepliedWork.module.css';
 
 const RepliedWork = ({ work, submitWork }) => {
-  console.log(work.id);
 
   const clickHandler = () => submitWork(work.id);
 
