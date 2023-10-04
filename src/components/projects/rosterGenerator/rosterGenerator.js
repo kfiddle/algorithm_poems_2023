@@ -2,7 +2,6 @@
 
 const rosterGenerator = (text) => {
 
-  
 
   const primariesAndExtras = {
     flute: ["piccolo", "alto flute", "bass flute", "flute d'amore"],
