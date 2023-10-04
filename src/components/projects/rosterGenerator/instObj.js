@@ -34,14 +34,14 @@ const quintet = new Inst('quintet', '5t');
 const altoVoice = new Inst('alto voice', 'A');
 const accord = new Inst('accordion', 'accord');
 
-const sax = new Inst('saxophone', 'sx')
+const sax = new Inst('saxophone', 'sx');
 const altoSax = new Inst('alto saxophone', 'asx');
 const trombaContra = new Inst('tromba contralta', 'atp');
 
 const baritoneVoice = new Inst('baritone voice', 'Bar');
 const bassVoice = new Inst('bass voice', 'Bs');
 const bassBarVoice = new Inst('bass-baritone voice', 'Bs-Bar');
-const tenor = new Inst('tenor voice', 'T')
+const tenor = new Inst('tenor voice', 'T');
 const cTenor = new Inst('countertenor', 'CT');
 const mz = new Inst('mezzo-soprano voice', 'Ms');
 const s = new Inst('soprano voice', 'S');
@@ -52,14 +52,14 @@ const bassetHorn = new Inst('basset horn', 'basset hn');
 const rec = new Inst('recorder', 'rec');
 
 const bariHorn = new Inst('baritone horn', 'bar hn');
-const tenorSax = new Inst('tenor saxophone', 'tsx')
+const tenorSax = new Inst('tenor saxophone', 'tsx');
 const bariSax = new Inst('baritone sax', 'bsx');
 
 const bassoon = new Inst('bassoon', 'bn');
 const contrabassoon = new Inst('contrabassoon', 'c. bsn.', bassoon);
 
 const horn = new Inst('horn', 'hn');
-const wagnerTuba = new Inst('Wagner Tuba', "Wag tb", horn)
+const wagnerTuba = new Inst('Wagner Tuba', 'Wag tb', horn);
 const pHorn = new Inst('posthorn', 'posthn');
 
 const trumpet = new Inst('trumpet', 'tpt');
@@ -70,6 +70,7 @@ const flug = new Inst('flugelhorn', 'flug', trumpet);
 
 const trombone = new Inst('trombone', 'tbn');
 const bassTromb = new Inst('bass trombone', 'btbn', trombone);
+
 const tuba = new Inst('tuba', 'tuba');
 const euph = new Inst('euphonium', 'euph', tuba);
 
@@ -89,9 +90,7 @@ const kyb = new Inst('keyboard', 'kybd');
 const cimbasso = new Inst('cimbasso', 'cimbasso');
 const organ = new Inst('organ', 'org');
 const continuo = new Inst('continuo', 'cnt');
-const synth = new Inst('synthesizer', 'synth')
-
-
+const synth = new Inst('synthesizer', 'synth');
 
 const percussion = new Inst('percussion', 'perc');
 const bassDrum = new Inst('bass drum', 'bd');
@@ -99,42 +98,98 @@ const sd = new Inst('snare drum', 'sd');
 const bassDrumCymbal = new Inst('bass drum with cymbal', 'bd/cym,');
 const dr = new Inst('drum', 'dr');
 const set = new Inst('drum set', 'set');
-const tamb = new Inst('tambourine', 'tambn')
+const tamb = new Inst('tambourine', 'tambn');
 const crot = new Inst('crotales', 'crot');
 const cymbals = new Inst('cymbals', 'cym');
-const tri = new Inst('triangle', 'tri')
+const tri = new Inst('triangle', 'tri');
 const susCym = new Inst('suspended cymbal', 'sus cym');
-const blocks = new Inst('temple blocks', 'templeblks')
+const blocks = new Inst('temple blocks', 'templeblks');
+const woodBl = new Inst('woodblock', 'woodblk');
 const ratch = new Inst('ratchet', 'ratch');
 const hh = new Inst('high-hat cymbal', 'hi-hat');
 const mandolin = new Inst('mandolin', 'mand');
 const marac = new Inst('maracas', 'marac');
 const marimba = new Inst('marimba', 'marim');
-const xyl = new Inst('xylophone', 'xyl')
-const vib = new Inst('vibraphone', 'vib')
-const whip = new Inst('whip', 'whip')
+const xyl = new Inst('xylophone', 'xyl');
+const vib = new Inst('vibraphone', 'vib');
+const whip = new Inst('whip', 'whip');
 
 const primaries = [flute, oboe, clarinet, bassoon, horn, trumpet, trombone, tuba];
 const allInsts = [
   flute,
+  fluteC,
+  altoFlute,
   piccolo,
   oboe,
   englishHorn,
+  damore,
+  ocass,
+
   clarinet,
+  Ebcl,
   bassClarinet,
   contrabassClarinet,
+  bassClarinet,
+  bassClarinetA,
+  altoCl,
+  dClar,
+
   bassoon,
   contrabassoon,
+
   horn,
+  wagnerTuba,
+  pHorn,
+
   trumpet,
+  piccTrumpet,
+  cornet,
+  bassTrump,
+  flug,
+
   trombone,
-  bassTrombone,
+  bassTromb,
   tuba,
+  euph,
+  str,
+  strQuartet,
+  strQuintet,
   violin,
   viola,
   cello,
   doubleBass,
+
   harp,
   piano,
+  harps,
+  glock,
+  kyb,
+  cimbasso,
+  organ,
+  continuo,
+  synth,
+
   percussion,
+  bassDrum,
+  sd,
+  bassDrumCymbal,
+  dr,
+  set,
+  tamb,
+  crot,
+  cymbals,
+  tri,
+  susCym,
+  blocks,
+  woodBl,
+  ratch,
+  hh,
+  mandolin,
+  marac,
+  marimba,
+  xyl,
+  vib,
+  whip,
 ];
+
+export default allInsts;

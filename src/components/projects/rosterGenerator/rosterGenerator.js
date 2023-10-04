@@ -1,20 +1,8 @@
-
+import allInsts from './instObj';
 
 const rosterGenerator = (text) => {
 
-
-  const primariesAndExtras = {
-    flute: ["piccolo", "alto flute", "bass flute", "flute d'amore"],
-    oboe: ["english horn", "oboe d'amore", "bass oboe"],
-    clarinet: ["eb clarinet", "bass clarinet", "sax"],
-    bassoon: ["contra"],
-    horn: ["wagner tuba"],
-    trumpet: ["cornet", "flugelhorn", "picc trumpet"],
-    trombone: ["bass trombone"],
-    tuba: ["euphonium"],
-  };
-
-
+  
   const Part = (instAbbrev, rankOrDesignate) => {
     let specialDesignate = isNaN(rankOrDesignate) ? rankOrDesignate : null;
     let rank;
