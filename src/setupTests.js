@@ -4,24 +4,14 @@
 // learn more: https://github.com/testing-library/jest-dom
 // import '@testing-library/jest-dom';
 
-import { describe } from 'eslint/lib/rule-tester/rule-tester';
+// import { describe } from 'eslint/lib/rule-tester/rule-tester';
 // Import the function and the instrument data
-import { isValidAbbv } from '../src/components/projects/rosterGenerator/rosterGenerator'; // Replace with the actual file path
-import { allInsts, primaries } from '../src/components/projects/rosterGenerator/instObj'; // Replace with the actual file path
-import { renderScoreLine, Part } from '../src/components/projects/rosterGenerator/rosterGenerator';
+// import { isValidAbbv } from '../src/components/projects/rosterGenerator/rosterGenerator'; // Replace with the actual file path
+// import { allInsts, primaries } from '../src/components/projects/rosterGenerator/instObj'; // Replace with the actual file path
+// import { renderScoreLine, Part } from '../src/components/projects/rosterGenerator/rosterGenerator';
 
 // Define your test cases
-// describe('isValidAbbv function', () => {
-//   it('should return true for valid instrument abbreviations', () => {
-//     // Test valid instrument abbreviations
-//     const instAbbvs = allInsts.map((inst) => inst.abbreviation);
 
-//     instAbbvs.forEach((abbreviation) => {
-//       const result = isValidAbbv(abbreviation);
-//       // expect(typeof result).toBe('object');
-//       expect(result).toEqual(5);
-//     });
-//   });
 
 //   it('should return false for invalid instrument abbreviations', () => {
 //     // Test invalid instrument abbreviations

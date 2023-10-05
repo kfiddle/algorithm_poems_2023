@@ -1,37 +1,9 @@
-import { primaries, allInsts } from './instObj';
+import { primaries, allInsts, Part, Chair } from './instObj';
 
 const rosterGenerator = (text) => {
   let isValid = true;
-  let scoreLinesList = [];
+  let chairsOnStage = [];
 
-  const isValidAbbv = (instAbbv) => {
-    const foundInst = allInsts.find((inst) => inst.abbreviation === instAbbv);
-    return foundInst ? foundInst : false;
-  };
-
-  const Part = (instAbbrev, rankOrDesignate) => {
-    let rank;
-    if (!isNaN(rankOrDesignate)) {
-      rank = +rankOrDesignate;
-    } else {
-      rank = null;
-    }
-    if (isValidAbbv(instAbbrev) && rankOrDesignate) {
-      return {
-        inst: { abbreviation: instAbbrev },
-        rank,
-      };
-    } else {
-      return null;
-    }
-  };
-
-  const renderScoreLine = (inst, rank) => {
-    let parts = [];
-    let part = Part(inst, rank);
-    part ? parts.push(part) : (isValid = false);
-    scoreLinesList.push({ parts });
-  };
 
   const goBetweenBrackets = (j, index) => {
     let primaryInst = primaries[index];
@@ -47,9 +19,17 @@ const rosterGenerator = (text) => {
     }
     let withinBracketsScoreLines = bracketSlice.slice(1, closingIndex).split('.');
 
+    // by now, we will have only an array of [1, 2, 3/pic]
+    //     or, 3[1, 2, cbn], etc...
+    //4   [1, 2, 3/cbn2, cbn1]
+
     withinBracketsScoreLines.forEach((scoreLine) => {
+      // if scoreline is just a number, make a chair from the primary inst and the number
       if (!isNaN(scoreLine)) {
         renderScoreLine(primaryInst, scoreLine);
+        
+        // chairsOnStage.push(new Chair(new P))
+        scoreLinesList.push
       } else if (extras[primaryInst].includes(scoreLine)) {
         renderScoreLine(scoreLine, 1);
       } else if (extras[primaryInst].includes(scoreLine.slice(0, -1))) {

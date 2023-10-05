@@ -5,12 +5,34 @@ class Inst {
     this.primary = primary;
     this.isPrimary = primary === null;
   }
+
+  getAllSecondaries = () => {
+    return allInsts.filter((inst) => inst.primary === this);
+  };
+}
+
+class Part {
+  constructor(inst, rank) {
+    this.rank = rank ? +rank : null;
+    this.inst = inst;
+  }
+}
+
+class Chair {
+  constructor(part) {
+    this.part = part;
+    this.doublings = [];
+  }
+
+  add(part) {
+    this.doublings.push(part);
+  }
 }
 
 const flute = new Inst('flute', 'fl');
 const piccolo = new Inst('piccolo', 'pic', flute);
-const fluteC = new Inst('bass flute in C', 'bfl');
-const altoFlute = new Inst('alto flute', 'afl');
+const fluteC = new Inst('bass flute in C', 'bfl', flute);
+const altoFlute = new Inst('alto flute', 'afl', flute);
 
 const oboe = new Inst('oboe', 'ob');
 const englishHorn = new Inst('english horn', 'Eh', oboe);
@@ -94,7 +116,7 @@ const synth = new Inst('synthesizer', 'synth');
 const percussion = new Inst('percussion', 'perc');
 const bassDrum = new Inst('bass drum', 'bd');
 const sd = new Inst('snare drum', 'sd');
-const bassDrumCymbal = new Inst('bass drum with cymbal', 'bd/cym,');
+const bassDrumCymbal = new Inst('bass drum with cymbal', 'bd/cym');
 const dr = new Inst('drum', 'dr');
 const set = new Inst('drum set', 'set');
 const tamb = new Inst('tambourine', 'tambn');
@@ -114,6 +136,7 @@ const vib = new Inst('vibraphone', 'vib');
 const whip = new Inst('whip', 'whip');
 
 const primaries = [flute, oboe, clarinet, bassoon, horn, trumpet, trombone, tuba];
+
 const allInsts = [
   flute,
   fluteC,
@@ -126,7 +149,6 @@ const allInsts = [
 
   clarinet,
   Ebcl,
-  bassClarinet,
   contrabassClarinet,
   bassClarinet,
   bassClarinetA,
@@ -214,4 +236,8 @@ const allInsts = [
   bariSax,
 ];
 
-export { primaries, allInsts };
+const isValidAbbv = (instAbbv) => {
+  const foundInst = allInsts.find((inst) => inst.abbreviation === instAbbv);
+  return foundInst ? foundInst : false;
+};
+export { primaries, isValidAbbv, allInsts, Part, Chair };
