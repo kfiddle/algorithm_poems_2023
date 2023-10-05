@@ -47,7 +47,6 @@ const mz = new Inst('mezzo-soprano voice', 'Ms');
 const s = new Inst('soprano voice', 'S');
 
 const narr = new Inst('narrator', 'narr');
-const baritoneHorn = new Inst('baritone horn', 'bar hn');
 const bassetHorn = new Inst('basset horn', 'basset hn');
 const rec = new Inst('recorder', 'rec');
 
@@ -190,6 +189,29 @@ const allInsts = [
   xyl,
   vib,
   whip,
+  gtr,
+  harm,
+  bassGuitar,
+  quartet,
+  quintet,
+  altoVoice,
+  accord,
+  sax,
+  altoSax,
+  trombaContra,
+  baritoneVoice,
+  bassVoice,
+  bassBarVoice,
+  tenor,
+  cTenor,
+  mz,
+  s,
+  narr,
+  bariHorn,
+  bassetHorn,
+  rec,
+  tenorSax,
+  bariSax,
 ];
 
-export default allInsts;
+export { primaries, allInsts };

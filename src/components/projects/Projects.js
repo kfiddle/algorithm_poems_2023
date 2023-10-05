@@ -5,6 +5,7 @@ import rosterGenerator from './rosterGenerator/rosterGenerator';
 
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
+import isValidAbbv from './rosterGenerator/rosterGenerator';
 
 const Projects = () => {
   const [repliedWorks, setRepliedWorks] = useState([]);
@@ -40,10 +41,12 @@ const Projects = () => {
   };
 
   const makeRoster = () => {
-    console.log(rosterGenerator('3  3  3  3 — 8[5-8/Wag tb]  3  3  1 — tmp — str'));
-    console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str'));
-    console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str'));
-    console.log(rosterGenerator('3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str'));
+    // console.log(rosterGenerator('3  3  3  3 — 8[5-8/Wag tb]  3  3  1 — tmp — str'));
+    // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str'));
+    // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str'));
+    // console.log(rosterGenerator('3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str'));
+
+    console.log(isValidAbbv('fl'))
   }
 
   const submitComposerAndWork = async () => {
