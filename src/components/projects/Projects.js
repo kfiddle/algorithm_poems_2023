@@ -41,12 +41,21 @@ const Projects = () => {
   };
 
   const makeRoster = () => {
+    const inputString = "4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1";
+    const inputString1 = "4[1.2.3.4]"
+    const inputString3 = "2 2 2 2[1.2]"
+    const inputString4 = "2 2 2 2 1 1 1 1"
+    const stringWithoutSpaces = inputString4.replace(/\s+/g, '');
+    console.log(rosterGenerator(stringWithoutSpaces));
+
+    const newChairs = rosterGenerator(stringWithoutSpaces);
+    if (newChairs.length > 0) setChairs(newChairs);
+
     // console.log(rosterGenerator('3  3  3  3 — 8[5-8/Wag tb]  3  3  1 — tmp — str'));
     // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str'));
     // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str'));
     // console.log(rosterGenerator('3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str'));
 
-    console.log(isValidAbbv('fl'))
   }
 
   const submitComposerAndWork = async () => {
@@ -85,6 +94,8 @@ const Projects = () => {
     }
   };
 
+  const displayChairs = chairs.length > 0 ? chairs.map(chair => <div key={chairs.indexOf(chair)}>{chair.part.inst.name} {chair.part.rank}</div>): [];
+
   return (
     <div className={styles.outerContainer}>
       <div className={styles.formDiv}>
@@ -98,6 +109,7 @@ const Projects = () => {
 
       {repliedWorks.length > 0 && <RepliedWorks works={repliedWorks} submitWork={submitWork} />}
       {badSubmission && <div>Try another one, nothing was returned for this entry</div>}
+      {chairs && <div>{displayChairs}</div>}
     </div>
   );
 };

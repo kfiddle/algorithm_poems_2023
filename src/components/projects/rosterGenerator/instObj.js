@@ -9,6 +9,12 @@ class Inst {
   getAllSecondaries = () => {
     return allInsts.filter((inst) => inst.primary === this);
   };
+
+  hasThisSecondary = (abbv) => {
+    return this.getAllSecondaries().find((inst) => inst.abbreviation === abbv);
+  };
+
+
 }
 
 class Part {
@@ -17,7 +23,6 @@ class Part {
     this.inst = inst;
   }
 }
-
 class Chair {
   constructor(part) {
     this.part = part;
@@ -27,6 +32,26 @@ class Chair {
   add(part) {
     this.doublings.push(part);
   }
+}
+
+// "3/cbn2", or "4/pic/alto" "3/pic"
+const renderChairWithDoublings = (primaryInst, text) => {
+  let chair = new Chair(new Part(primaryInst, text[0]));
+  const partsArray = text.split('/');
+  const endsWithDigit = /\w\d$/;
+
+  for (let partString of partsArray.slice(1)) {
+    if (endsWithDigit.exec(partString)) {
+      const inst = instFromAbbv(partString.slice(0, -1));
+      const rank = partString.slice(-1);
+      chair.add(new Part(inst, rank));
+    } else {
+      const inst = instFromAbbv(partString);
+      chair.add(new Part(inst, 1));
+    }
+  }
+
+  return chair;
 }
 
 const flute = new Inst('flute', 'fl');
@@ -77,7 +102,7 @@ const tenorSax = new Inst('tenor saxophone', 'tsx');
 const bariSax = new Inst('baritone sax', 'bsx');
 
 const bassoon = new Inst('bassoon', 'bn');
-const contrabassoon = new Inst('contrabassoon', 'c. bsn.', bassoon);
+const contrabassoon = new Inst('contrabassoon', 'cbn', bassoon);
 
 const horn = new Inst('horn', 'hn');
 const wagnerTuba = new Inst('Wagner Tuba', 'Wag tb', horn);
@@ -236,8 +261,8 @@ const allInsts = [
   bariSax,
 ];
 
-const isValidAbbv = (instAbbv) => {
+const instFromAbbv = (instAbbv) => {
   const foundInst = allInsts.find((inst) => inst.abbreviation === instAbbv);
   return foundInst ? foundInst : false;
 };
-export { primaries, isValidAbbv, allInsts, Part, Chair };
+export { primaries, instFromAbbv, allInsts, Part, Chair, renderChairWithDoublings };
