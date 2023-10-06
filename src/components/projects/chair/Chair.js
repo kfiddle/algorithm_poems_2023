@@ -11,7 +11,7 @@ const Chair = ({ chair }) => {
     }
   }
   return (
-    <div>
+    <div className={styles.outerContainer}>
       {displayChair}
     </div>
   );

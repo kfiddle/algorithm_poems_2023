@@ -1,0 +1,25 @@
+.outerContainer {
+  position: relative;
+  display: flex;
+  margin: 0.5rem 4rem;
+  padding: 0.75rem;
+  background: linear-gradient(to right, transparent, #eccbcb, rgb(70, 43, 218));
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  font-weight: 900;
+  z-index: 1;
+  color: rgb(5, 1, 16);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.unclickedItem {
+  background: linear-gradient(to right, transparent, #eccbcb, rgb(70, 43, 218));
+  cursor: pointer;
+}
+
+.outerContainer:hover {
+  /* background: rgb(44, 120, 182); */
+  background: linear-gradient(to right, transparent, #eccbcb, rgb(90, 85, 85));
+
+}

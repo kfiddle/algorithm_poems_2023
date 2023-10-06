@@ -77,7 +77,7 @@ function App() {
   return (
     <div className={styles.appDiv}>
       <div className={styles.stripesDiv}>
-        <WarrantOfficerStripes stripesHandler={stripesHandler} stripesClicked={stripesClicked} />
+        <WarrantOfficerStripes stripesHandler={stripesHandler} stripesClicked={stripesClicked} clickedChoice={clickedChoice} />
       </div>
 
       <Header isVisible={isHeaderVisible} />

@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 import styles from "./WarrantOfficerStripes.module.css";
 
-const WarrantOfficerStripes = (props) => {
+const WarrantOfficerStripes = ({ stripesClicked, stripesHandler, clickedChoice}) => {
   const [counter, setCounter] = useState(0);
 
   const [bar1, setBar1] = useState("");
@@ -15,8 +15,6 @@ const WarrantOfficerStripes = (props) => {
   const [clicked, setClicked] = useState(false);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
-
-  const panel = props.panel;
 
   const hovering = (up) => {
     setTimeout(() => {
@@ -53,9 +51,9 @@ const WarrantOfficerStripes = (props) => {
     }
   };
 
-  const stripesClicked = () => {
+  const stripesClicker = () => {
     spinTheBars();
-    props.stripesHandler();
+    stripesHandler();
   };
 
   return (
@@ -67,7 +65,7 @@ const WarrantOfficerStripes = (props) => {
       onMouseLeave={() => {
         hovering(false);
       }}
-      onClick={stripesClicked}
+      onClick={stripesClicker}
     >
       <div className={styles.barsAndLabel}>
         <div className={styles.bars}>
@@ -97,7 +95,7 @@ const WarrantOfficerStripes = (props) => {
           className={styles.menuLabel}
           style={{ fontSize: isMobile ? ".75rem" : "1rem" }}
         >
-          {!panel ? "HOME" : panel}
+          {!clickedChoice ? "HOME" : clickedChoice}
         </h3>
       </div>
     </div>

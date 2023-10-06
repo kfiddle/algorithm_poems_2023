@@ -4,6 +4,7 @@ import returnNumber from './numbersUtil';
 import rosterGenerator from './rosterGenerator/rosterGenerator';
 
 import Chair from './chair/Chair';
+import ScrollDownArrow from '../scrollDownArrow/ScrollDownArrow';
 
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
@@ -113,6 +114,7 @@ const Projects = () => {
         {badSubmission && <div>Try another one, nothing was returned for this entry</div>}
       </div>
       <div>{chairs && <div>{displayChairs}</div>}</div>
+      <ScrollDownArrow />
     </div>
   );
 };
