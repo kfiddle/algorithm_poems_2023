@@ -8,6 +8,7 @@ import ScrollDownArrow from '../scrollDownArrow/ScrollDownArrow';
 
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
+import Harmonode from './harmonode/Harmonode';
 
 const Projects = () => {
   const [repliedWorks, setRepliedWorks] = useState([]);
@@ -112,9 +113,10 @@ const Projects = () => {
         </div>
         {repliedWorks.length > 0 && <RepliedWorks works={repliedWorks} submitWork={submitWork} />}
         {badSubmission && <div>Try another one, nothing was returned for this entry</div>}
+        <ScrollDownArrow />
       </div>
       <div>{chairs && <div>{displayChairs}</div>}</div>
-      <ScrollDownArrow />
+      <Harmonode />
     </div>
   );
 };
