@@ -25,15 +25,15 @@ const Projects = () => {
     return regex.test(input);
   }
 
-     // 2  2  2  2 — 2  2  0  0 — tmp — str
-    // 3[1.2.pic]  3[1.2.Eh]  2  4[1.2.3.cbn] — 4  5[1.2.3.crt1.crt2]  3  1 — tmp+3 — 2hp — str
-    // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str
-    // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str
-    // 3[1.2.pic]  2  2  3[1.2.cbn] — 4  2  3  0 — tmp+3 — str
-    // 3[1.2.3/pic]  2  2  2 — 4  2  3  1 — tmp+2 — str
-    // 3[1.2/pic.3/pic]  3[1.2.Eh]  3[1.2.bcl]  2 — 4  2  3  1 — tmp+2 — 2hp — cel — str
-    // 3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str
-    // 3  3  3  3 — 8[5-8/Wag tb]  3  3  1 — tmp — str
+  // 2  2  2  2 — 2  2  0  0 — tmp — str
+  // 3[1.2.pic]  3[1.2.Eh]  2  4[1.2.3.cbn] — 4  5[1.2.3.crt1.crt2]  3  1 — tmp+3 — 2hp — str
+  // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str
+  // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str
+  // 3[1.2.pic]  2  2  3[1.2.cbn] — 4  2  3  0 — tmp+3 — str
+  // 3[1.2.3/pic]  2  2  2 — 4  2  3  1 — tmp+2 — str
+  // 3[1.2/pic.3/pic]  3[1.2.Eh]  3[1.2.bcl]  2 — 4  2  3  1 — tmp+2 — 2hp — cel — str
+  // 3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str
+  // 3  3  3  3 — 8[5-8/Wag tb]  3  3  1 — tmp — str
 
   const enterComposerWork = (entryType) => (e) => {
     setBadSubmission(false);
@@ -42,11 +42,11 @@ const Projects = () => {
   };
 
   const makeRoster = () => {
-    const inputString = "4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1";
-    const inputString5 = "4[1.2.3/pic2.pic1]  1 1 1 — 1 1 1 1";
-    const inputString1 = "4[1.2.3.4]"
-    const inputString3 = "2 2 2 2[1.2]"
-    const inputString4 = "2 2 2 2 - 1 1 1 1"
+    const inputString = '4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1';
+    const inputString5 = '4[1.2.3/pic2.pic1]  1 1 1 — 1 1 1 1';
+    const inputString1 = '4[1.2.3.4]';
+    const inputString3 = '2 2 2 2[1.2]';
+    const inputString4 = '2 2 2 2 - 1 1 1 1';
     const stringWithoutSpaces = inputString.replace(/\s+/g, '');
     console.log(rosterGenerator(stringWithoutSpaces));
 
@@ -57,11 +57,9 @@ const Projects = () => {
     // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — backstage: 3tp, 4Wag tubas[2ten, 2bass] — tmp+4 — 3hp — cel, pf — str'));
     // console.log(rosterGenerator('4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str'));
     // console.log(rosterGenerator('3[1.2.pic]  2  2  2 — 4  4[2tp, 2crt]  3  1 — tmp+3 — hp — str'));
-
-  }
+  };
 
   const submitComposerAndWork = async () => {
-
     const objToSend = { composer: composer };
     console.log(composer, work);
 
@@ -92,26 +90,29 @@ const Projects = () => {
     });
     if (reply.ok) {
       const workDetails = await reply.json();
-      console.log(workDetails.formula)
+      console.log(workDetails.formula);
     }
   };
 
-  const displayChairs = chairs.length > 0 ? chairs.map(chair => <Chair key={chairs.indexOf(chair)} chair={chair}/>): [];
+  const displayChairs = chairs.length > 0 ? chairs.map((chair) => <Chair key={chairs.indexOf(chair)} chair={chair} />) : [];
 
   return (
     <div className={styles.outerContainer}>
-      <div className={styles.formDiv}>
-        <input className={styles.control} placeholder="composer" onChange={enterComposerWork('composer')} />
-        <input className={styles.control} placeholder="work" onChange={enterComposerWork('work')} />
-        <button className={styles.button} onClick={submitComposerAndWork}>
-          Submit
-        </button>
-        <button className={styles.button} onClick={makeRoster}>TEST</button>
+      <div>
+        <div className={styles.formDiv}>
+          <input className={styles.control} placeholder="composer" onChange={enterComposerWork('composer')} />
+          <input className={styles.control} placeholder="work" onChange={enterComposerWork('work')} />
+          <button className={styles.button} onClick={submitComposerAndWork}>
+            Submit
+          </button>
+          <button className={styles.button} onClick={makeRoster}>
+            TEST
+          </button>
+        </div>
+        {repliedWorks.length > 0 && <RepliedWorks works={repliedWorks} submitWork={submitWork} />}
+        {badSubmission && <div>Try another one, nothing was returned for this entry</div>}
       </div>
-
-      {repliedWorks.length > 0 && <RepliedWorks works={repliedWorks} submitWork={submitWork} />}
-      {badSubmission && <div>Try another one, nothing was returned for this entry</div>}
-      {chairs && <div>{displayChairs}</div>}
+      <div>{chairs && <div>{displayChairs}</div>}</div>
     </div>
   );
 };

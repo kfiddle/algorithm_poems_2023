@@ -1,7 +1,7 @@
 .outerContainer {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 5vh;
   width: 100vw;
   height: 100vh;
