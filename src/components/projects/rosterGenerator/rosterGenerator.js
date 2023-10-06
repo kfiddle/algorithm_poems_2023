@@ -4,6 +4,9 @@ const rosterGenerator = (text) => {
   let isValid = true;
   let chairsOnStage = [];
 
+  // "4[1.2.3.4]" 
+  // 0, 0
+
   const goBetweenBrackets = (j, index) => {
     let primaryInst = primaries[index];
     if (primaryInst === undefined) {
@@ -17,7 +20,6 @@ const rosterGenerator = (text) => {
       return;
     }
     let withinBracketsScoreLines = bracketSlice.slice(1, closingIndex).split('.');
-    console.log(withinBracketsScoreLines);
 
     // by now, we will have only an array of [1, 2, 3/pic]
     //     or, 3[1, 2, cbn], etc...
@@ -28,14 +30,11 @@ const rosterGenerator = (text) => {
       if (!isNaN(scoreLine)) {
         let rank = scoreLine;
         chairsOnStage.push(new Chair(new Part(primaryInst, rank)));
-        const part = new Part(primaryInst, rank);
-        chairsOnStage.push(new Chair(part));
-
+  
         // in case the scoreline is an abbreviation only, like "cbn" or "pic";
       } else if (primaryInst.hasThisSecondary(scoreLine)) {
         const inst = instFromAbbv(scoreLine);
-        const part = new Part(inst, 1);
-        chairsOnStage.push(new Chair(part));
+        chairsOnStage.push(new Chair(new Part(inst, 1)));
 
         // in case scoreline ends with a number, like "cbn2", or "crnt3"
       } else if (primaryInst.hasThisSecondary(scoreLine.slice(0, -1))) {
@@ -45,6 +44,7 @@ const rosterGenerator = (text) => {
         chairsOnStage.push(new Chair(part));
 
         // in this case, scoreline would be something like "3/cbn2"
+        // 4[1.2.3/pic2.pic1]
       } else {
         chairsOnStage.push(renderChairWithDoublings(primaryInst, scoreLine));
       }
@@ -52,46 +52,26 @@ const rosterGenerator = (text) => {
     return closingIndex + j;
   };
 
+  // 2 2 2 2 - 3 3 3 3
   // "4[1.2.3.4]"
   const mainLoop = (text) => {
     let times = 0;
     for (let j = 0; j < text.length; j++) {
-      let nextChar = text[j + 1];
-      if (nextChar === '[') {
-        j = goBetweenBrackets(j, times);
-      } else {
-        for (let k = 1; k <= text[j]; k++) {
-          chairsOnStage.push(new Chair(new Part(primaries[times], k)));
-        }
-        times++;
-      } 
-    } 
+      if (text[j] !== '-') {
+        let nextChar = text[j + 1];
+        if (nextChar === '[') {
+          j = goBetweenBrackets(j, times);
+          times++;
+        } else if (!isNaN(text[j])) {
+          for (let k = 1; k <= text[j]; k++) {
+            chairsOnStage.push(new Chair(new Part(primaries[times], k)));
+          } times++;
+        } 
+      }
+    }
   };
 
-  // const mainLoop = () => {
-  //   let times = 0;
-  //   for (let j = 0; j < text.length; j++) {
-  //     let nextChar = text[j + 1];
-  //     if (nextChar === '[') {
-  //       j = goBetweenBrackets(j, times);
-  //     } else if (nextChar === 'A') {
-  //       for (let k = 1; k <= text[j]; k++) {
-  //         renderScoreLine(primaries[times], k);
-  //       }
-  //       renderScoreLine(primaries[times], 'a');
-  //       j++;
-  //       times++;
-  //     } else {
-  //       for (let k = 1; k <= text[j]; k++) {
-  //         renderScoreLine(primaries[times], k);
-  //       }
-  //       times++;
-  //     }
-  //   }
-  // };
-
-
-
+ 
 
   mainLoop(text);
   return isValid ? chairsOnStage : false;

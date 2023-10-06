@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import returnNumber from './numbersUtil';
 import rosterGenerator from './rosterGenerator/rosterGenerator';
 
+import Chair from './chair/Chair';
+
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
-import isValidAbbv from './rosterGenerator/rosterGenerator';
 
 const Projects = () => {
   const [repliedWorks, setRepliedWorks] = useState([]);
@@ -42,10 +43,11 @@ const Projects = () => {
 
   const makeRoster = () => {
     const inputString = "4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1";
+    const inputString5 = "4[1.2.3/pic2.pic1]  1 1 1 — 1 1 1 1";
     const inputString1 = "4[1.2.3.4]"
     const inputString3 = "2 2 2 2[1.2]"
-    const inputString4 = "2 2 2 2 1 1 1 1"
-    const stringWithoutSpaces = inputString4.replace(/\s+/g, '');
+    const inputString4 = "2 2 2 2 - 1 1 1 1"
+    const stringWithoutSpaces = inputString.replace(/\s+/g, '');
     console.log(rosterGenerator(stringWithoutSpaces));
 
     const newChairs = rosterGenerator(stringWithoutSpaces);
@@ -94,7 +96,7 @@ const Projects = () => {
     }
   };
 
-  const displayChairs = chairs.length > 0 ? chairs.map(chair => <div key={chairs.indexOf(chair)}>{chair.part.inst.name} {chair.part.rank}</div>): [];
+  const displayChairs = chairs.length > 0 ? chairs.map(chair => <Chair key={chairs.indexOf(chair)} chair={chair}/>): [];
 
   return (
     <div className={styles.outerContainer}>

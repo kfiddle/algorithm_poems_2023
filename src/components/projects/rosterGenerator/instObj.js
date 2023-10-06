@@ -35,6 +35,7 @@ class Chair {
 }
 
 // "3/cbn2", or "4/pic/alto" "3/pic"
+// 3/pic2
 const renderChairWithDoublings = (primaryInst, text) => {
   let chair = new Chair(new Part(primaryInst, text[0]));
   const partsArray = text.split('/');
