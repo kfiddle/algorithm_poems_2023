@@ -30,6 +30,7 @@ import SideBar from './components/sideBar/SideBar';
 import AboutPanel from './components/aboutPanel/AboutPanel';
 import ContactFormPanel from './components/contactFormPanel/ContactFormPanel';
 import Projects from './components/projects/Projects';
+import ProjectPanel from './components/projectPanel/ProjectPanel';
 
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
@@ -85,7 +86,7 @@ function App() {
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
-      {clickedChoice === CURRENTPROJECTS && <Projects />}
+      {clickedChoice === CURRENTPROJECTS && <ProjectPanel />}
       <Bird birds={birds} />
     </div>
   );

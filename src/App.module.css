@@ -2,6 +2,8 @@
 }
 
 .stripesDiv {
-  margin-top: 3rem;
   width: fit-content;
+  position: fixed;
+  top: 3rem;
+  z-index: 10;
 }

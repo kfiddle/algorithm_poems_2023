@@ -24,6 +24,7 @@ const rosterGenerator = (text) => {
     // by now, we will have only an array of [1, 2, 3/pic]
     //     or, 3[1, 2, cbn], etc...
     //4   [1, 2, 3/cbn2, cbn1]
+    // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str
 
     withinBracketsScoreLines.forEach((scoreLine) => {
       // if scoreline is just a number, make a chair from the primary inst and the number
@@ -54,6 +55,8 @@ const rosterGenerator = (text) => {
 
   // 2 2 2 2 - 3 3 3 3
   // "4[1.2.3.4]"
+    // 4[1.2.3/pic2.pic1]  4[1.2.3.Eh]  4[1.2.3/Ebcl.bcl]  4[1.2.3/cbn2.cbn1] — 4  3  3  1 — tmp+4 — 3hp — cel, pf — str
+
   const mainLoop = (text) => {
     let times = 0;
     for (let j = 0; j < text.length; j++) {

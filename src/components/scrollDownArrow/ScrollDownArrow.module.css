@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   animation: bounce 4s infinite;
-  position: relative;
-  bottom: 30%;
+  position: fixed;
+  bottom: 10%;
   /* right: 50%; */
   width: 100%;
   z-index: 10;
