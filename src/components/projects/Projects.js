@@ -8,7 +8,7 @@ import ScrollDownArrow from '../scrollDownArrow/ScrollDownArrow';
 
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
-import Harmonode from './harmonode/Harmonode';
+import Harmonode from '../projectPanel/harmonode/Harmonode';
 
 const Projects = () => {
   const [repliedWorks, setRepliedWorks] = useState([]);

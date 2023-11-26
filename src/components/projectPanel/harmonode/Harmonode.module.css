@@ -1,0 +1,9 @@
+.outerContainer {
+  display: flex;
+}
+
+img {
+  max-width: 100%; /* Ensure images don't exceed their container */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px; /* Adjust margin as needed */
+}

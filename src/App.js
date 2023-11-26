@@ -4,9 +4,9 @@ import styles from './App.module.css';
 import Header from './components/header/Header';
 import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOfficerStripes';
 
-import bigWheel from './assets/bigWheel.png';
-import pennyFrame from './assets/pennyFrame.png';
-import smallWheel from './assets/smallWheel-01.png';
+import bigWheel from './assets/bike/bigWheel.png';
+import pennyFrame from './assets/bike/pennyFrame.png';
+import smallWheel from './assets/bike/smallWheel-01.png';
 import headshot from './assets/headShot.JPG';
 
 import bird1 from './assets/flyingBird/bird1.png';
@@ -23,6 +23,10 @@ import bird11 from './assets/flyingBird/bird11.png';
 import bird12 from './assets/flyingBird/bird12.png';
 import bird13 from './assets/flyingBird/bird13.png';
 import bird14 from './assets/flyingBird/bird14.png';
+
+import harmonodeShot1 from './assets/harmonode/harmonodeShot1.png';
+import harmonodeGIF1 from './assets/harmonode/harmonodeGIF1.gif';
+import harmonodeGIF2 from './assets/harmonode/harmonodeGIF2.gif';
 
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import Bird from './components/Bird/Bird';
@@ -45,6 +49,8 @@ function App() {
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  const harmonode = { harmonodeShot1, harmonodeGIF1, harmonodeGIF2 };
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
@@ -86,7 +92,7 @@ function App() {
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
-      {clickedChoice === CURRENTPROJECTS && <ProjectPanel />}
+      {clickedChoice === CURRENTPROJECTS && <ProjectPanel harmonode={harmonode} />}
       <Bird birds={birds} />
     </div>
   );
