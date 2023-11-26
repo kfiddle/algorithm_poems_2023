@@ -1,5 +1,6 @@
 .outerContainer {
   display: flex;
+  height: 90vh;
 }
 
 .arrowDiv {
@@ -24,14 +25,6 @@
   cursor: pointer;
 }
 
-.nextArrow {
-  transform: rotate(-45deg);
-}
-
-.prevArrow {
-  transform: rotate(135deg);
-}
-
 .infoContainer {
   flex: 1; /* Take up one-fourth of the screen */
   background-color: rgb(152, 150, 167); /* Example background color */
@@ -41,21 +34,23 @@
 .infoText {
   font-family: 'Quilon-Medium';
   padding: 3rem;
-  
 }
 
 .imagesContainer {
   display: flex;
+  overflow: hidden; /* Hide overflow */
   flex: 3; /* Take up three-fourths of the screen */
 }
 
-.imagesContainer > div {
-  flex: 1; /* Each image container takes equal space */
-  overflow: hidden; /* Ensure images don't overflow */
+.imageDiv {
+  flex: 0 0 auto; /* Fix width for each slide */
+  padding: 10px; /* Add padding */
 }
 
 .image {
   width: 100%; /* Fill the entire container */
-  height: 100%; /* Fill the entire container */
-  object-fit: cover; /* Maintain aspect ratio */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevent image cropping */
+  border: 1px solid #ccc; /* Example border */
+  border-radius: 5px; /* Example border radius */
 }

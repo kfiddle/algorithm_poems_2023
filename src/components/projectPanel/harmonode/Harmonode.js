@@ -9,13 +9,13 @@ const Harmonode = ({ harmonode }) => {
           <div className={`${styles.arrow} ${styles.prevArrow}`}></div>
           <div className={`${styles.arrow} ${styles.nextArrow}`}></div>
         </div>
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
-        First div will be here. It will have an amazing story, and more of a story
+        <div className={styles.infoText}>
+          First div will be here. It will have an amazing story, and more of a story First div will be here. It will have an amazing story,
+          and more of a story First div will be here. It will have an amazing story, and more of a story First div will be here. It will
+          have an amazing story, and more of a story First div will be here. It will have an amazing story, and more of a story First div
+          will be here. It will have an amazing story, and more of a story First div will be here. It will have an amazing story, and more
+          of a story
+        </div>
       </div>
       <div className={styles.imagesContainer}>
         <div>

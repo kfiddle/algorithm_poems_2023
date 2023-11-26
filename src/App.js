@@ -50,7 +50,17 @@ function App() {
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
-  const harmonode = { harmonodeShot1, harmonodeGIF1, harmonodeGIF2 };
+  let projects = [
+    {
+      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
+
+      slides: [
+        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
+        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
+        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
+      ],
+    },
+  ];
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
@@ -92,7 +102,7 @@ function App() {
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
-      {clickedChoice === CURRENTPROJECTS && <ProjectPanel harmonode={harmonode} />}
+      {clickedChoice === CURRENTPROJECTS && <ProjectPanel projects={projects} />}
       <Bird birds={birds} />
     </div>
   );
