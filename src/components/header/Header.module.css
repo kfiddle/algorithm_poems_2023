@@ -1,6 +1,9 @@
 /* Header.module.css */
 
+
 .headerContainer {
+  font-family: 'Quilon-Medium';
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -41,6 +44,8 @@ h1 {
 }
 
 .flyInLetter {
+  font-family: 'Quilon-Medium';
+
   opacity: 0;
   transform: translateX(100%);
   animation: flyIn 1s ease forwards;

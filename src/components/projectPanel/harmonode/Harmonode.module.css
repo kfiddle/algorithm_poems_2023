@@ -2,8 +2,61 @@
   display: flex;
 }
 
-img {
-  max-width: 100%; /* Ensure images don't exceed their container */
-  height: auto; /* Maintain aspect ratio */
-  margin: 10px; /* Adjust margin as needed */
+/* .image {
+  width: 100%; 
+  height: auto; 
+  margin: 10px; 
+} */
+
+.arrowDiv {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 2px rgb(133, 129, 161);
+}
+
+.arrow {
+  border: solid rgb(38, 38, 85);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  border: solid chartreuse;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nextArrow {
+  transform: rotate(-45deg);
+}
+
+.prevArrow {
+  transform: rotate(135deg);
+}
+
+.infoContainer {
+  flex: 1; /* Take up one-fourth of the screen */
+  background-color: rgb(152, 150, 167); /* Example background color */
+  padding: 20px;
+  font-family: 'Quilon-Medium';
+}
+
+.imagesContainer {
+  display: flex;
+  flex: 3; /* Take up three-fourths of the screen */
+}
+
+.imagesContainer > div {
+  flex: 1; /* Each image container takes equal space */
+  overflow: hidden; /* Ensure images don't overflow */
+}
+
+.image {
+  width: 100%; /* Fill the entire container */
+  height: 100%; /* Fill the entire container */
+  object-fit: cover; /* Maintain aspect ratio */
 }

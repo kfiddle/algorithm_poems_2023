@@ -4,14 +4,29 @@ const Harmonode = ({ harmonode }) => {
 
   return (
     <div className={styles.outerContainer}>
-      <div>
-        <img src={harmonodeShot1} alt="harmonodeHome" />
+      <div className={styles.infoContainer}>
+        <div className={styles.arrowDiv}>
+          <div className={`${styles.arrow} ${styles.prevArrow}`}></div>
+          <div className={`${styles.arrow} ${styles.nextArrow}`}></div>
+        </div>
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
+        First div will be here. It will have an amazing story, and more of a story
       </div>
-      <div>
-        <img src={harmonodeGIF1} alt="harmonodeGIF1" />
-      </div>
-      <div>
-        <img src={harmonodeGIF2} alt="harmonodeGIF2" />
+      <div className={styles.imagesContainer}>
+        <div>
+          <img src={harmonodeShot1} className={styles.image} alt="harmonodeHome" />
+        </div>
+        <div>
+          <img src={harmonodeGIF1} className={styles.image} alt="harmonodeGIF1" />
+        </div>
+        <div>
+          <img src={harmonodeGIF2} className={styles.image} alt="harmonodeGIF2" />
+        </div>
       </div>
     </div>
   );
