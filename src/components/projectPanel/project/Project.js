@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Project.module.css';
 
-const Project = ({ project }) => {
-  const { info, slides } = project;
+const Project = ({ project, scrollBackUp }) => {
+  const { title, info, slides } = project;
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -35,7 +35,7 @@ const Project = ({ project }) => {
               style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }}
             ></div>
           </div>
-          <div className={styles.gridContainer}>
+          <div className={styles.gridContainer} onClick={scrollBackUp}>
             <div className={styles.square}></div>
             <div className={styles.square}></div>
             <div className={styles.square}></div>
@@ -56,7 +56,7 @@ const Project = ({ project }) => {
             ></div>
           </div>
         </div>
-        <div className={styles.infoText}>{info}</div>
+        <div className={styles.infoText}>{title}  {info}</div>
       </div>
       <div className={styles.imagesContainer}>{gallery}</div>
     </div>

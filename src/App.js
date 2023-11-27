@@ -52,6 +52,30 @@ function App() {
 
   let projects = [
     {
+      id: 1,
+      title: 'Harmonode',
+      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
+
+      slides: [
+        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
+        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
+        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
+      ],
+    },
+    {
+      id: 2,
+      title: 'SymCraft',
+      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
+
+      slides: [
+        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
+        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
+        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
+      ],
+    },
+    {
+      id: 3,
+      title: 'OtherProject',
       info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
 
       slides: [

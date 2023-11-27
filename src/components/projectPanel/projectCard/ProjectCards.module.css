@@ -5,15 +5,19 @@
   align-items: center; /* Vertically center the cards */
 }
 
-.card {
-  flex: 1; /* Each card takes up an equal part of the space */
+.cardContainer {
+  flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 90%;
 }
 
-.innerCard {
+.card {
   background: whitesmoke;
   border-radius: 20px;
   width: 80%;
-  /* Add padding or margin here as needed */
+  height: 50%;
+  box-shadow: 0 5px 10px rgba(38, 29, 212, 0.2);
+  cursor: pointer;
 }
