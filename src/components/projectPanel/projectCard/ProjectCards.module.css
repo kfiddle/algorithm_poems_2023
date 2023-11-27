@@ -1,0 +1,19 @@
+.outerContainer {
+  display: flex;
+  height: 90vh;
+  justify-content: space-around; /* Distribute space evenly between cards */
+  align-items: center; /* Vertically center the cards */
+}
+
+.card {
+  flex: 1; /* Each card takes up an equal part of the space */
+  display: flex;
+  justify-content: center;
+}
+
+.innerCard {
+  background: whitesmoke;
+  border-radius: 20px;
+  width: 80%;
+  /* Add padding or margin here as needed */
+}

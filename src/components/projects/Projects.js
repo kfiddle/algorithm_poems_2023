@@ -8,7 +8,7 @@ import ScrollDownArrow from '../scrollDownArrow/ScrollDownArrow';
 
 import styles from './Projects.module.css';
 import RepliedWorks from './repliedWorks/RepliedWorks';
-import Harmonode from '../projectPanel/harmonode/Harmonode';
+// import Harmonode from '../projectPanel/harmonode/Harmonode';
 
 const Projects = () => {
   const [repliedWorks, setRepliedWorks] = useState([]);
@@ -116,7 +116,7 @@ const Projects = () => {
         <ScrollDownArrow />
       </div>
       <div>{chairs && <div>{displayChairs}</div>}</div>
-      <Harmonode />
+      {/* <Harmonode /> */}
     </div>
   );
 };
