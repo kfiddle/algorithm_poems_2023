@@ -7,7 +7,7 @@ const ProjectPanel = ({ projects }) => {
   return (
     <div className={styles.outerContainer}>
       <div style={{ height: '90vh' }}>Sym Craft will be here</div>
-      <div>
+      <div style={{ background: 'transparent' }}>
         <Project project={projects[0]} />
       </div>
       <div style={{ height: '90vh', background: 'indigo' }}>maybe finance will be here</div>

@@ -1,11 +1,14 @@
 .outerContainer {
   display: flex;
   height: 90vh;
+  background: rgb(82, 79, 96);
+  border: 3px solid rgb(112, 128, 144);
 }
 
 .arrowDiv {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 1rem;
   border-bottom: solid 2px rgb(133, 129, 161);
 }
 
@@ -15,6 +18,14 @@
   display: inline-block;
   padding: 10px;
   cursor: pointer;
+}
+
+.prevArrow {
+  transform: rotate(135deg);
+}
+
+.nextArrow {
+  transform: rotate(-45deg);
 }
 
 .arrow:hover {
@@ -29,6 +40,8 @@
   flex: 1; /* Take up one-fourth of the screen */
   background-color: rgb(152, 150, 167); /* Example background color */
   padding: 20px;
+  border-right: 3px solid rgb(112, 128, 144);
+
 }
 
 .infoText {
@@ -39,18 +52,26 @@
 .imagesContainer {
   display: flex;
   overflow: hidden; /* Hide overflow */
-  flex: 3; /* Take up three-fourths of the screen */
+  /* padding: 1rem; */
+  flex: 2; /* Take up three-fourths of the screen */
 }
 
 .imageDiv {
   flex: 0 0 auto; /* Fix width for each slide */
-  padding: 10px; /* Add padding */
+  width: 80%;
+  margin: 0;
+  transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   
 }
 
 .image {
-  width: 100%; /* Fill the entire container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Prevent image cropping */
-  border: 1px solid #ccc; /* Example border */
+  max-width: 95%; /* Limit image width */
+  max-height: 100%; /* Limit image height */
+  object-fit: contain; /* Maintain aspect ratio without cropping */
+  border: 1px solid #272626; /* Example border */
   border-radius: 5px; /* Example border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }

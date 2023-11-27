@@ -31,7 +31,6 @@ const Project = ({ project }) => {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
-        {/* Arrows for navigation */}
         <div className={styles.arrowDiv}>
           <div
             className={`${styles.arrow} ${styles.prevArrow}`}
