@@ -2,7 +2,7 @@
 
 
 .headerContainer {
-  font-family: 'Quilon-Medium';
+  /* font-family: 'Quilon-Medium'; */
 
   display: flex;
   align-items: center;
@@ -44,8 +44,7 @@ h1 {
 }
 
 .flyInLetter {
-  font-family: 'Quilon-Medium';
-
+  font-family: 'Asap-Regular';
   opacity: 0;
   transform: translateX(100%);
   animation: flyIn 1s ease forwards;

@@ -1,8 +1,10 @@
 .outerContainer {
   display: flex;
   height: 90vh;
-  justify-content: space-around; /* Distribute space evenly between cards */
-  align-items: center; /* Vertically center the cards */
+  justify-content: space-around;
+  /* Distribute space evenly between cards */
+  align-items: center;
+  /* Vertically center the cards */
 }
 
 .cardContainer {
@@ -19,9 +21,16 @@
   cursor: pointer;
 }
 
+
 .cardImage {
   width: 80%;
   height: auto;
   border-radius: 20px;
+  transition: filter 0.3s ease;
   box-shadow: 0 5px 10px rgba(38, 29, 212, 0.2);
+
+}
+
+.cardImage:hover {
+  filter: brightness(1.5);
 }

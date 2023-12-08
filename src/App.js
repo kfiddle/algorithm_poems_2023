@@ -31,6 +31,10 @@ import harmonodeShot1 from './assets/harmonode/harmonodeShot1.png';
 import harmonodeGIF1 from './assets/harmonode/harmonodeGIF1.gif';
 import harmonodeGIF2 from './assets/harmonode/harmonodeGIF2.gif';
 
+import addGigCalendar from './assets/symCraft/addGigCalendar.png';
+import library from './assets/symCraft/library.png';
+import libraryInstEntry from './assets/symCraft/libraryInstEntry.png';
+
 
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import Bird from './components/Bird/Bird';
@@ -73,9 +77,9 @@ function App() {
       info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
 
       slides: [
-        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
-        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
-        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
+        { id: 1, src: library, alt: 'library view' },
+        { id: 2, src: addGigCalendar, alt: 'add performance view' },
+        { id: 3, src: libraryInstEntry, alt: 'add instrumentation view' },
       ],
     },
     {
