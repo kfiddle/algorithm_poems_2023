@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Project.module.css';
+import styles from './Project1.module.css';
 
 const Project = ({ project, scrollBackUp }) => {
   const { title, info, slides } = project;
@@ -14,43 +14,34 @@ const Project = ({ project, scrollBackUp }) => {
     setCurrentIndex((prevIndex) => (prevIndex < slides.length - 1 ? prevIndex + 1 : prevIndex));
   };
 
-  // const gallery = slides.map((slide, index) => (
-  //   <div
-  //     key={slide.id}
-  //     className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-  //     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-  //   >
-  //     <img src={slide.src} className={styles.image} alt={slide.alt} />
-  //   </div>
-  // ));
-
   const gallery = slides.map((slide, index) => (
-    <div key={slide.id} className={styles.imageDiv}>
+    <div
+      key={slide.id}
+      className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
+      style={{ transform: `translateY(-${currentIndex * 100}%)` }} /* Updated translateY for vertical scrolling */
+    >
       <img src={slide.src} className={styles.image} alt={slide.alt} />
     </div>
+  ));
+
+  const gridSquares = Array.from({ length: 9 }, (_, i) => (
+    <div key={i} className={styles.square}></div>
   ));
 
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
+        <div className={styles.infoText}>{title}  {info}</div>
         <div className={styles.sliderControlDiv}>
+          <div className={styles.gridContainer} onClick={scrollBackUp}>
+            {gridSquares}
+          </div>
           <div className={styles.arrowBox}>
             <div
               className={`${styles.arrow} ${styles.prevArrow}`}
               onClick={handlePrevClick}
               style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }}
             ></div>
-          </div>
-          <div className={styles.gridContainer} onClick={scrollBackUp}>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
           </div>
           <div className={styles.arrowBox}>
             <div
@@ -62,9 +53,10 @@ const Project = ({ project, scrollBackUp }) => {
             ></div>
           </div>
         </div>
-        <div className={styles.infoText}>{title}  {info}</div>
       </div>
-      <div className={styles.imagesContainer}>{gallery}</div>
+      <div className={styles.imagesWrapper}>
+        <div className={styles.imagesContainer}>{gallery}</div>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import Project from './project/Project';
+import Project1 from './project/Project1';
 import ProjectCards from './projectCard/ProjectCards';
 
 import styles from './ProjectPanel.module.css';
@@ -24,7 +24,7 @@ const ProjectPanel = ({ projects }) => {
         <ProjectCards projects={projects} clicker={projectClicker} />
       </div>
       <div style={{ background: 'transparent' }}>
-        {clickedProject && <Project project={clickedProject} scrollBackUp={() => scroller(top)} />}
+        {clickedProject && <Project1 project={clickedProject} scrollBackUp={() => scroller(top)} />}
       </div>
     </div>
   );
