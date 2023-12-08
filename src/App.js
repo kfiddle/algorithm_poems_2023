@@ -24,16 +24,19 @@ import bird12 from './assets/flyingBird/bird12.png';
 import bird13 from './assets/flyingBird/bird13.png';
 import bird14 from './assets/flyingBird/bird14.png';
 
+import CelloTitleCard from './assets/projectCardImages/CelloTitleCard.png';
+import HarmonodeTitleCard from './assets/projectCardImages/HarmonodeTitleCard.png';
+
 import harmonodeShot1 from './assets/harmonode/harmonodeShot1.png';
 import harmonodeGIF1 from './assets/harmonode/harmonodeGIF1.gif';
 import harmonodeGIF2 from './assets/harmonode/harmonodeGIF2.gif';
+
 
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import Bird from './components/Bird/Bird';
 import SideBar from './components/sideBar/SideBar';
 import AboutPanel from './components/aboutPanel/AboutPanel';
 import ContactFormPanel from './components/contactFormPanel/ContactFormPanel';
-import Projects from './components/projects/Projects';
 import ProjectPanel from './components/projectPanel/ProjectPanel';
 
 const ABOUTME = 'ABOUT ME';
@@ -54,6 +57,7 @@ function App() {
     {
       id: 1,
       title: 'Harmonode',
+      cardImage:HarmonodeTitleCard,
       info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
 
       slides: [
@@ -65,6 +69,7 @@ function App() {
     {
       id: 2,
       title: 'SymCraft',
+      cardImage: CelloTitleCard,
       info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
 
       slides: [
@@ -76,6 +81,7 @@ function App() {
     {
       id: 3,
       title: 'OtherProject',
+      cardImage: CelloTitleCard,
       info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
 
       slides: [

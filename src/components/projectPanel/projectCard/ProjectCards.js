@@ -4,7 +4,7 @@ const ProjectCards = ({ projects, clicker }) => {
   const displayCards = projects.map((project) => (
     <div key={project.id} className={styles.cardContainer}>
       <div onClick={() => clicker(project.id)} className={styles.card}>
-        {project.title}
+        <img src={project.cardImage} className={styles.cardImage}/>
       </div>
     </div>
   ));
