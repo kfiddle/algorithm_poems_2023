@@ -91,38 +91,38 @@
   flex: 2;
   display: flex;
   overflow-x: hidden;
-  /* Hide horizontal overflow */
   overflow-y: auto;
-  /* Enable vertical scrolling */
   padding: 10px;
-  /* Optional padding */
 }
 
 .imagesContainer {
+  flex: 2;
   display: flex;
   flex-direction: column;
   /* Stack images vertically */
-  gap: 10px;
+  gap: 2rem;
   /* Adjust the gap between images */
 }
 
 .imageDiv {
   flex: 0 0 auto;
   /* Fix width for each slide */
-  width: 80%;
+  width: 100%;
+  height: 30rem;
   margin: 0;
   transition: transform 0.5s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .image {
-  max-width: 95%;
-  /* Limit image width */
-  max-height: 100%;
+  /* max-width: 95%; */
+  /* /* width: auto; */
+  max-height: 100%; 
   /* Limit image height */
-  object-fit: contain;
+  /* object-fit: contain;  */
   /* Maintain aspect ratio without cropping */
   border-radius: 5px;
   /* Example border radius */

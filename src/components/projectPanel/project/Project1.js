@@ -20,7 +20,7 @@ const Project = ({ project, scrollBackUp }) => {
     <div
       key={slide.id}
       className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-      style={{ transform: `translateY(-${currentIndex * 100}%)` }} /* Updated translateY for vertical scrolling */
+      style={{ transform: `translateY(calc(-${currentIndex * 100}% + 2rem))` }} /* Updated translateY for vertical scrolling */
     >
       <img src={slide.src} className={styles.image} alt={slide.alt} />
     </div>
