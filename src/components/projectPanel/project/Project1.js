@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Project1.module.css';
 
+import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+
 const Project = ({ project, scrollBackUp }) => {
   const { title, info, slides } = project;
 
@@ -37,20 +39,14 @@ const Project = ({ project, scrollBackUp }) => {
             {gridSquares}
           </div>
           <div className={styles.arrowBox}>
-            <div
-              className={`${styles.arrow} ${styles.prevArrow}`}
-              onClick={handlePrevClick}
-              style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }}
-            ></div>
+            <BiSolidUpArrow onClick={handlePrevClick} style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }} className={styles.arrowIcon} />
+
           </div>
           <div className={styles.arrowBox}>
-            <div
-              className={`${styles.arrow} ${styles.nextArrow}`}
-              onClick={handleNextClick}
-              style={{
-                visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
-              }}
-            ></div>
+
+            <BiSolidDownArrow onClick={handleNextClick} style={{
+              visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
+            }} className={styles.arrowIcon} />
           </div>
         </div>
       </div>

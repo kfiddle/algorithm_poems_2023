@@ -1,114 +1,130 @@
 /* Your original CSS styles */
 
 .outerContainer {
-    display: flex;
-    height: 90vh;
-    background: rgb(82, 79, 96);
-    border: 3px solid rgb(112, 128, 144);
-  }
-  
-  .infoContainer {
-    flex: 1;
-    display: flex;
-    background-color: rgb(152, 150, 167);
-    padding: 20px;
-    border-right: 3px solid rgb(112, 128, 144);
-    overflow-y: auto; /* Enable vertical scrolling for the infoContainer */
-  }
+  display: flex;
+  height: 90vh;
+  background: rgb(82, 79, 96);
+  border: 3px solid rgb(112, 128, 144);
+}
 
-  .sliderControlDiv {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 1rem;
-    border-bottom: solid 2px rgb(133, 129, 161);
+.infoContainer {
+  flex: 1;
+  display: flex;
+  background-color: rgb(152, 150, 167);
+  /* padding: 20px; */
+  border-right: 3px solid rgb(112, 128, 144);
+  overflow-y: auto;
+  /* Enable vertical scrolling for the infoContainer */
+}
+
+.sliderControlDiv {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  padding-bottom: 1rem;
+  border-left: solid 3px rgb(112, 128, 144);
+}
+
+.sliderControlDiv>* {
+  margin: 1rem;
+}
+
+.gridContainer {
+  width: 2.5rem;
+  /* Adjust this according to your preference */
+  height: 2.5rem;
+  /* Adjust this according to your preference */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  /* Adjust the gap between squares */
+  cursor: pointer;
+}
+
+/* Style for the small squares */
+.square {
+  width: 0.75rem;
+  /* Adjust this according to your preference */
+  height: 0.75rem;
+  /* Adjust this according to your preference */
+  background-color: #000;
+
+  /* Color of the squares */
+  .gridContainer:hover & {
+    background-color: lightblue;
+    /* Change the color on hover */
   }
-  
-  .arrowBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .arrow {
-    border: solid rgb(38, 38, 85);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .prevArrow {
-    transform: rotate(135deg);
-  }
-  
-  .nextArrow {
-    transform: rotate(-45deg);
-  }
-  
-  .arrow:hover {
-    border: solid lightblue;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  
-  .infoText {
-    font-family: 'Quilon-Medium';
-    padding: 3rem;
-  }
-  
-  .imagesWrapper {
-    flex: 2;
-    display: flex;
-    overflow-x: hidden; /* Hide horizontal overflow */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 10px; /* Optional padding */
-  }
-  
-  .imagesContainer {
-    display: flex;
-    flex-direction: column; /* Stack images vertically */
-    gap: 10px; /* Adjust the gap between images */
-  }
-  
-  .imageDiv {
-    flex: 0 0 auto; /* Fix width for each slide */
-    width: 80%;
-    margin: 0;
-    transition: transform 0.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image {
-    max-width: 95%; /* Limit image width */
-    max-height: 100%; /* Limit image height */
-    object-fit: contain; /* Maintain aspect ratio without cropping */
-    border-radius: 5px; /* Example border radius */
-    box-shadow: 0 5px 10px rgba(130, 115, 115, 0.2);
-  }
-  
-  .gridContainer {
-    width: 50px; /* Adjust this according to your preference */
-    height: 50px; /* Adjust this according to your preference */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2px; /* Adjust the gap between squares */
-    cursor: pointer;
-  }
-  
-  /* Style for the small squares */
-  .square {
-    width: 15px; /* Adjust this according to your preference */
-    height: 15px; /* Adjust this according to your preference */
-    background-color: #000; /* Color of the squares */
-    .gridContainer:hover & {
-        background-color: lightblue; /* Change the color on hover */
-      }
-  }
-  
+}
+
+.arrowBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.arrowIcon:hover {
+  fill: lightblue;
+}
+
+.arrow:hover {
+  border: solid lightblue;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.infoText {
+  font-family: 'Quilon-Medium';
+  padding: 3rem;
+}
+
+.imagesWrapper {
+  flex: 2;
+  display: flex;
+  overflow-x: hidden;
+  /* Hide horizontal overflow */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  padding: 10px;
+  /* Optional padding */
+}
+
+.imagesContainer {
+  display: flex;
+  flex-direction: column;
+  /* Stack images vertically */
+  gap: 10px;
+  /* Adjust the gap between images */
+}
+
+.imageDiv {
+  flex: 0 0 auto;
+  /* Fix width for each slide */
+  width: 80%;
+  margin: 0;
+  transition: transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-width: 95%;
+  /* Limit image width */
+  max-height: 100%;
+  /* Limit image height */
+  object-fit: contain;
+  /* Maintain aspect ratio without cropping */
+  border-radius: 5px;
+  /* Example border radius */
+  box-shadow: 0 5px 10px rgba(130, 115, 115, 0.2);
+}
