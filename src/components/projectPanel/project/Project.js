@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import styles from './Project.module.css';
 
+import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+
 const Project = ({ project, scrollBackUp }) => {
   const { title, info, slides } = project;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollOutHandler = () => {
+    setCurrentIndex(0);
+    scrollBackUp();
+  }
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
@@ -14,57 +21,46 @@ const Project = ({ project, scrollBackUp }) => {
     setCurrentIndex((prevIndex) => (prevIndex < slides.length - 1 ? prevIndex + 1 : prevIndex));
   };
 
-  // const gallery = slides.map((slide, index) => (
-  //   <div
-  //     key={slide.id}
-  //     className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-  //     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-  //   >
-  //     <img src={slide.src} className={styles.image} alt={slide.alt} />
-  //   </div>
-  // ));
-
   const gallery = slides.map((slide, index) => (
-    <div key={slide.id} className={styles.imageDiv}>
+    <div
+      key={slide.id}
+      className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
+      style={{ transform: `translateY(calc(-${currentIndex * 100}% + 2rem))` }} /* Updated translateY for vertical scrolling */
+    >
       <img src={slide.src} className={styles.image} alt={slide.alt} />
     </div>
+  ));
+
+  const gridSquares = Array.from({ length: 9 }, (_, i) => (
+    <div key={i} className={styles.square}></div>
   ));
 
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
+        <div className={styles.infoText}>
+          <div className={styles.infoDiv}>{info}</div>
+
+        </div>
         <div className={styles.sliderControlDiv}>
-          <div className={styles.arrowBox}>
-            <div
-              className={`${styles.arrow} ${styles.prevArrow}`}
-              onClick={handlePrevClick}
-              style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }}
-            ></div>
-          </div>
-          <div className={styles.gridContainer} onClick={scrollBackUp}>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
-            <div className={styles.square}></div>
+          <div className={styles.gridContainer} onClick={scrollOutHandler}>
+            {gridSquares}
           </div>
           <div className={styles.arrowBox}>
-            <div
-              className={`${styles.arrow} ${styles.nextArrow}`}
-              onClick={handleNextClick}
-              style={{
-                visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
-              }}
-            ></div>
+            <BiSolidUpArrow onClick={handlePrevClick} style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }} className={styles.arrowIcon} />
+
+          </div>
+          <div className={styles.arrowBox}>
+
+            <BiSolidDownArrow onClick={handleNextClick} style={{
+              visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
+            }} className={styles.arrowIcon} />
           </div>
         </div>
-        <div className={styles.infoText}>{title}  {info}</div>
       </div>
-      <div className={styles.imagesContainer}>{gallery}</div>
+      <div className={styles.imagesWrapper}>
+        <div className={styles.imagesContainer}>{gallery}</div>
+      </div>
     </div>
   );
 };

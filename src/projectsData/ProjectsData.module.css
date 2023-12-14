@@ -1,0 +1,19 @@
+.titleHeader {
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'Asap-Regular';
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.linkedInIcon {
+    fill: rgb(58, 58, 182);
+    cursor: pointer;
+}
+
+.gitHubIcon {
+    cursor: pointer;
+}

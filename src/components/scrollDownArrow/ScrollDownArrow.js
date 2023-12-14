@@ -16,6 +16,8 @@ const ScrollDownArrow = () => {
     setTimesClicked(timesClicked + 1);
   };
 
+
+  
   useEffect(() => {
     const handleScroll = () => {
       // Reset the timesClicked state if the user manually scrolls near the top

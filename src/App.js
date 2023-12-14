@@ -3,6 +3,7 @@ import styles from './App.module.css';
 
 import Header from './components/header/Header';
 import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOfficerStripes';
+import { projects } from './projectsData/ProjectsData.js';
 
 import bigWheel from './assets/bike/bigWheel.png';
 import pennyFrame from './assets/bike/pennyFrame.png';
@@ -35,6 +36,8 @@ import addGigCalendar from './assets/symCraft/addGigCalendar.png';
 import library from './assets/symCraft/library.png';
 import libraryInstEntry from './assets/symCraft/libraryInstEntry.png';
 
+import pennies1 from './assets/pennies/pennies1.png';
+import transEntry from './assets/pennies/transEntry.png';
 
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import Bird from './components/Bird/Bird';
@@ -57,44 +60,6 @@ function App() {
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
-  let projects = [
-    {
-      id: 1,
-      title: 'Harmonode',
-      cardImage:HarmonodeTitleCard,
-      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
-
-      slides: [
-        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
-        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
-        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
-      ],
-    },
-    {
-      id: 2,
-      title: 'SymCraft',
-      cardImage: CelloTitleCard,
-      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
-
-      slides: [
-        { id: 1, src: library, alt: 'library view' },
-        { id: 2, src: addGigCalendar, alt: 'add performance view' },
-        { id: 3, src: libraryInstEntry, alt: 'add instrumentation view' },
-      ],
-    },
-    {
-      id: 3,
-      title: 'OtherProject',
-      cardImage: CelloTitleCard,
-      info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
-
-      slides: [
-        { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
-        { id: 2, src: harmonodeGIF1, alt: 'harmonodeGIF1' },
-        { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
-      ],
-    },
-  ];
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
