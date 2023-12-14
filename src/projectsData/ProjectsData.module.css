@@ -7,13 +7,48 @@
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: lightblue;
 }
 
 .linkedInIcon {
     fill: rgb(58, 58, 182);
     cursor: pointer;
+    font-size: 2rem;
 }
 
 .gitHubIcon {
     cursor: pointer;
+    font-size: 2rem;
+}
+
+.linkedInIcon:hover {
+    fill: lightblue;
+}
+
+.gitHubIcon:hover {
+    fill: lightblue;
+}
+
+.foundingFathersDiv {
+    margin-top: 1rem;
+}
+
+.linksFooter {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.homeDiv {
+    display: flex;
+    align-items: center;
+}
+
+.homeDiv>* {
+    margin-right: 1rem;
 }

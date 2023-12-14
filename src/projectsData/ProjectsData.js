@@ -20,19 +20,27 @@ import transEntry from '../assets/pennies/transEntry.png';
 
 import styles from './ProjectsData.module.css';
 
+
 const HarmonodeInfo = () => {
     return (<>
-    <div className={styles.titleHeader}>Harmonode</div>
+        <div className={styles.titleHeader}>Harmonode</div>
         <div>
             &nbsp;&nbsp;&nbsp;Managing endpoints, fetch requests, and data flow between the various client-side and backend components of an application can be complex, and organizing these connections can quickly turn into a nightmare for a developer.
         </div>
-        <div style={{ marginTop: '2rem' }}>
+        <div style={{ marginTop: '1rem' }}>
             &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered development tool that lightens the challenges of endpoint management and visualization. By harnessing the power of ReactFlow, Harmonode empowers users to seamlessly navigate through the web of connections, offering a clear and concise visualization of the trail each route follows through the component tree of an app, from it's initial request(s) in any frontend components, through the server, any middleware, and back again.
         </div>
-        <div style={{marginTop: '2rem'}}>&nbsp;&nbsp;&nbsp; <a href="https://www.harmonode.com">Harmonode.com</a></div>
-        <div><FaLinkedin className={styles.linkedInIcon}/></div>
-        <div><FaGithub className={styles.gitHubIcon}/></div>
-        <div><AiFillHome className={styles.gitHubIcon}/></div>
+
+        <div className={styles.foundingFathersDiv}>A collaborative project with :<br /><br/>
+            &nbsp;&nbsp;&nbsp;Hamza Chaudhry | @hmz44<br />
+            &nbsp;&nbsp;&nbsp;Eric Dalio | @EricDalio<br />
+            &nbsp;&nbsp;&nbsp;Sebastian Sarmiento | @sebastiansarm<br />
+            &nbsp;&nbsp;&nbsp;Tim Weidinger | @timweidinger</div><br />
+        <footer className={styles.linksFooter}>
+            <div className={styles.homeDiv}><a href="https://www.harmonode.com">Harmonode.com</a></div>
+            <div><FaLinkedin className={styles.linkedInIcon} /></div>
+            <div><FaGithub className={styles.gitHubIcon} /></div>
+        </footer>
     </>);
 }
 

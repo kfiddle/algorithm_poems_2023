@@ -38,10 +38,8 @@ const Project = ({ project, scrollBackUp }) => {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
-        <div className={styles.infoText}>
           <div className={styles.infoDiv}>{info}</div>
 
-        </div>
         <div className={styles.sliderControlDiv}>
           <div className={styles.gridContainer} onClick={scrollOutHandler}>
             {gridSquares}

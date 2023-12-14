@@ -8,10 +8,10 @@
 }
 
 .infoContainer {
+  position: relative;
   flex: 1;
   display: flex;
   background-color: rgb(152, 150, 167);
-  /* padding: 20px; */
   border-right: 3px solid rgb(112, 128, 144);
   overflow-y: auto;
   /* Enable vertical scrolling for the infoContainer */
@@ -27,6 +27,7 @@
 .infoDiv {
   font-family: 'Asap-Regular';
   letter-spacing: 0.15em;
+  padding: 3rem;
 }
 
 .sliderControlDiv {
@@ -91,12 +92,6 @@
   display: inline-block;
   padding: 10px;
   cursor: pointer;
-}
-
-
-.infoText {
-  font-family: 'Quilon-Medium';
-  padding: 3rem;
 }
 
 .imagesWrapper {
