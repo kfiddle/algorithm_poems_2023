@@ -31,22 +31,27 @@ const HarmonodeInfo = () => {
             &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered development tool that lightens the challenges of endpoint management and visualization. By harnessing the power of ReactFlow, Harmonode empowers users to seamlessly navigate through the web of connections, offering a clear and concise visualization of the trail each route follows through the component tree of an app, from it's initial request(s) in any frontend components, through the server, any middleware, and back again.
         </div>
 
-        <div className={styles.foundingFathersDiv}>A collaborative project with :<br /><br/>
-            &nbsp;&nbsp;&nbsp;Hamza Chaudhry | @hmz44<br />
-            &nbsp;&nbsp;&nbsp;Eric Dalio | @EricDalio<br />
-            &nbsp;&nbsp;&nbsp;Sebastian Sarmiento | @sebastiansarm<br />
-            &nbsp;&nbsp;&nbsp;Tim Weidinger | @timweidinger</div><br />
+        <div className={styles.foundingFathersDiv}>A collaborative project with :<br /><br />
+            &nbsp;&nbsp;&nbsp;Hamza Chaudhry | <a href='https://github.com/hmz44'>@hmz44</a><br />
+            &nbsp;&nbsp;&nbsp;Eric Dalio | <a href='https://github.com/EricDalio'>@EricDalio</a><br />
+            &nbsp;&nbsp;&nbsp;Sebastian Sarmiento | <a href='https://github.com/sebastiansarm'>@sebastiansarm</a><br />
+            &nbsp;&nbsp;&nbsp;Tim Weidinger | <a href='https://github.com/timweidinger'>@timweidinger</a></div><br />
         <footer className={styles.linksFooter}>
             <div className={styles.homeDiv}><a href="https://www.harmonode.com">Harmonode.com</a></div>
-            <div><FaLinkedin className={styles.linkedInIcon} /></div>
-            <div><FaGithub className={styles.gitHubIcon} /></div>
+            <div><a href='https://www.linkedin.com/company/harmonode/posts/?feedView=all'><FaLinkedin className={styles.linkedInIcon} /></a></div>
+            <div><a href='https://github.com/oslabs-beta/Harmonode'><FaGithub className={styles.gitHubIcon} /></a></div>
         </footer>
     </>);
 }
 
 
 const SymCraftInfo = () => {
-    return (<></>);
+    return (
+        <div>
+            My app generates seating rosters automatically from reading the standard notational syntax associated with each piece. Each roster allows for instant editing onscreen, as well as communication with the players. Players can be emailed or texted by a couple of clicks, they can also communicate directly with the app itself, records of each are stored automatically, and a notifications log updates a manager with any changes. Communication can be accomplished through automated template or by tailored messages. Any necessary data can be found within a few button clicks, and since details are sent automatically, there is no digging through email threads, mistyping, etc...
+            Orchestral management is a unique challenge. Each piece of music requires a unique seating roster- wind players often "double", meaning that they play multiple instruments for a single piece, and string players must be rotated in different chairs. Each of these is based on contractual and other requirements, and careful records must be kept for payroll purposes, etc... Also, communication is cumbersome, since it is traditionally accomplished in modes outside of software, like phone, email, and text, all of which add a layer of error prone complexity to an already complex situation. An orchestra that performs and rehearses regularly often requires several full-time staff members simply to manage the behind the scenes complexity.
+        </div>
+    );
 }
 
 const coinInfo = () => {
@@ -71,7 +76,7 @@ export const projects = [
         id: 2,
         title: 'SymCraft',
         cardImage: CelloTitleCard,
-        info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
+        info: <SymCraftInfo />,
 
         slides: [
             { id: 1, src: library, alt: 'library view' },

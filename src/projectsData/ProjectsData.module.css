@@ -40,7 +40,7 @@ a:hover {
 .linksFooter {
     display: flex;
     justify-content: space-between;
-    padding-top: 1rem;
+    padding: 1rem 2rem 0rem 0rem;
     margin-top: 1rem;
 }
 
