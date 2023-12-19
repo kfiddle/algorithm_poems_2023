@@ -50,6 +50,9 @@ const SymCraftInfo = () => {
         <div>
             My app generates seating rosters automatically from reading the standard notational syntax associated with each piece. Each roster allows for instant editing onscreen, as well as communication with the players. Players can be emailed or texted by a couple of clicks, they can also communicate directly with the app itself, records of each are stored automatically, and a notifications log updates a manager with any changes. Communication can be accomplished through automated template or by tailored messages. Any necessary data can be found within a few button clicks, and since details are sent automatically, there is no digging through email threads, mistyping, etc...
             Orchestral management is a unique challenge. Each piece of music requires a unique seating roster- wind players often "double", meaning that they play multiple instruments for a single piece, and string players must be rotated in different chairs. Each of these is based on contractual and other requirements, and careful records must be kept for payroll purposes, etc... Also, communication is cumbersome, since it is traditionally accomplished in modes outside of software, like phone, email, and text, all of which add a layer of error prone complexity to an already complex situation. An orchestra that performs and rehearses regularly often requires several full-time staff members simply to manage the behind the scenes complexity.
+        
+            For all aspects of professional orchestral management, from rehearsal and concert scheduling, to library management,
+            automated generating of seating rosters, and communication with players    
         </div>
     );
 }

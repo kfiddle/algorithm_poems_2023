@@ -60,7 +60,6 @@ function App() {
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
-
   useEffect(() => {
     const showDelay = setTimeout(() => {
       setShowPennyFarthing(true);
