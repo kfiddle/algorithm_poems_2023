@@ -84,8 +84,18 @@ const SymCraftInfo = () => {
   );
 };
 
-const coinInfo = () => {
-  return <></>;
+const CoinInfo = () => {
+  return (
+    <div>
+      <div className={styles.titleHeader}>CoinVerse</div>
+      <div>
+        &nbsp;&nbsp;&nbsp;A cliché I know- every software developer makes a personal financial tracking app, and so This is mine. I've never
+        liked how the usual software packages do certain things, like associate categories with expenses, or make attaching things to a
+        calendar difficult, so this does everything as I need it done.
+      </div>
+      <div style={{ marginTop: '1rem' }}>&nbsp;&nbsp;&nbsp;Built in React with Node.js and mongoDB.</div>
+    </div>
+  );
 };
 
 export const projects = [
@@ -115,9 +125,9 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'OtherProject',
+    title: 'CoinVerse',
     cardImage: CelloTitleCard,
-    info: 'lots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text lots of text lots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of textlots of text',
+    info: <CoinInfo />,
 
     slides: [
       { id: 1, src: pennies1, alt: 'finance account ledger' },
