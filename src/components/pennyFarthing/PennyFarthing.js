@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import deskStyles from './PennyFarthing.module.css';
-import phoneStyles from './PennyFarthing.module.css';
+import phoneStyles from './PhoneBike.module.css';
 
 const PennyFarthing = ({ smallWheel, pennyFrame, bigWheel }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
