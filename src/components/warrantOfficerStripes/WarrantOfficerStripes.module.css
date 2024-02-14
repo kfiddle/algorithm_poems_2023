@@ -30,10 +30,21 @@
   position: absolute;
   width: 8rem;
   height: 10px;
-  background-color: #0b0a15;
+  background: linear-gradient(to right, rgb(63, 25, 41), rgb(83, 56, 67), rgb(150, 150, 226), rgb(179, 179, 202), #e2e1e7, rgb(190, 142, 162), rgb(63, 25, 41));
+
   transition: cubic-bezier(0.3, 0, 0.5, 1) 0.25s;
   transform: translateY(0);
+  background-size: 200% auto;
+  animation: shimmer 2s infinite linear;
+
 }
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
 
 .hover {
   background-color: darkblue;
