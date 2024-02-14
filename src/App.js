@@ -97,7 +97,13 @@ function App() {
 
       <Header isVisible={isHeaderVisible} />
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
-      {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
+
+      {/* {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />} */}
+
+      {/* <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} /> */}
+
+      <SideBar menuList={menuList} choice={choiceHandler} visible={true} />
+
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
       {clickedChoice === CURRENTPROJECTS && <ProjectPanel projects={projects} />}

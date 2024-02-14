@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
+import { useMediaQuery } from 'react-responsive';
+
+
+import deskStyles from './Bird.module.css';
+import phoneStyles from './PhoneBird.module.css';
+
 import styles from './Bird.module.css';
+
 
 const Bird = ({ birds }) => {
   let [birdStyles, setBirdStyles] = useState([0, 0, 1]);
   let [imageNumber, setImageNumber] = useState(0);
+  // const isMobile = useMediaQuery({ maxWidth: 767 });
+
+
+  // const styles = !isMobile ? deskStyles : phoneStyles;
+
 
   useEffect(() => {
     const flyAway = (i, birdNumber) => {
