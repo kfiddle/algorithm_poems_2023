@@ -89,7 +89,7 @@ const CoinInfo = () => {
     <div>
       <div className={styles.titleHeader}>CoinVerse</div>
       <div>
-        &nbsp;&nbsp;&nbsp;A cliché I know- every software developer makes a personal financial tracking app, and so This is mine. I've never
+        &nbsp;&nbsp;&nbsp;A cliché I know... every software developer makes a personal financial tracking app, and so this is mine. I've never
         liked how the usual software packages do certain things, like associate categories with expenses, or make attaching things to a
         calendar difficult, so this does everything as I need it done.
       </div>
