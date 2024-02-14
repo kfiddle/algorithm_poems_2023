@@ -39,6 +39,24 @@
 
 }
 
+.bar1 {
+  background: linear-gradient(to right, rgb(150, 150, 226), rgb(179, 179, 202), #e2e1e7, rgb(190, 142, 162), rgb(63, 25, 41), rgb(83, 56, 67), rgb(63, 25, 41), rgb(150, 150, 226));
+  background-size: 200% auto;
+  animation: shimmer 2s infinite linear;
+}
+
+.bar2 {
+  background: linear-gradient(to right, rgb(63, 25, 41), rgb(83, 56, 67), rgb(150, 150, 226), rgb(179, 179, 202), #e2e1e7, rgb(190, 142, 162), rgb(63, 25, 41));
+  background-size: 200% auto;
+  animation: shimmer 2s infinite linear;
+}
+
+.bar3 {
+  background: linear-gradient(to right, rgb(190, 142, 162) rgb(164, 97, 118), rgb(202, 179, 201), #8b7fc8, rgb(139, 135, 181), rgb(63, 25, 41), rgb(83, 56, 67), rgb(63, 25, 41), rgb(190, 142, 162));
+  background-size: 200% auto;
+  animation: shimmer 3s infinite linear;
+}
+
 @keyframes shimmer {
   to {
     background-position: 200% center;

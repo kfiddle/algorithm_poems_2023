@@ -19,12 +19,16 @@ h1 {
 }
 
 .nameAndSubTitle {
-  margin: 5rem 0rem 0rem 1rem
+  margin: 1rem 0rem 0rem 1rem
 }
 
 .visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+.subtitle {
+  margin: 0;
 }
 
 .hidden {

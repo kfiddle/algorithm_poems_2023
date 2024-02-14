@@ -1,0 +1,9 @@
+.appDiv {
+}
+
+.stripesDiv {
+  width: fit-content;
+  position: fixed;
+  /* top: 3rem; */
+  z-index: 10;
+}

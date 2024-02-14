@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import styles from './App.module.css';
+
+
+import { useMediaQuery } from "react-responsive";
+
 
 import Header from './components/header/Header';
 import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOfficerStripes';
@@ -46,6 +49,9 @@ import AboutPanel from './components/aboutPanel/AboutPanel';
 import ContactFormPanel from './components/contactFormPanel/ContactFormPanel';
 import ProjectPanel from './components/projectPanel/ProjectPanel';
 
+import deskStyles from './AppDesk.module.css';
+import phoneStyles from './AppPhone.module.css';
+
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
 const CONTACT = 'CONTACT';
@@ -54,11 +60,15 @@ const birds = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bi
 
 const menuList = [ABOUTME, CURRENTPROJECTS, CONTACT];
 
+
 function App() {
   const [showPennyFarthing, setShowPennyFarthing] = useState(false);
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const styles = !isMobile ? deskStyles : phoneStyles;
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
@@ -70,7 +80,7 @@ function App() {
     }, 22000);
 
     const showSideBar = setTimeout(() => {
-      setStripesClicked(true)
+      // setStripesClicked(true)
     }, 5000);
 
     return () => {

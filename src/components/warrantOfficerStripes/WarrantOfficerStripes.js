@@ -70,21 +70,22 @@ const WarrantOfficerStripes = ({ stripesClicked, stripesHandler, clickedChoice})
       <div className={styles.barsAndLabel}>
         <div className={styles.bars}>
           <span
-            className={`${styles.bar} ${styles[bar1]}`}
+            className={`${styles.bar} ${styles[bar1]} ${styles.bar1}`}
             style={{
               top: "10px",
               transform: clicked ? `rotate(${spin[0]}turn)` : "",
             }}
           ></span>
           <span
-            className={`${styles.bar} ${styles[bar2]}`}
+            className={`${styles.bar} ${styles[bar2]} ${styles.bar2}`}
+
             style={{
               top: "26px",
               transform: clicked ? `rotate(${spin[1]}turn)` : "",
             }}
           ></span>
           <span
-            className={`${styles.bar} ${styles[bar3]}`}
+            className={`${styles.bar} ${styles[bar3]} ${styles.bar3}`}
             style={{
               top: "41px",
               transform: clicked ? `rotate(${spin[2]}turn)` : "",
