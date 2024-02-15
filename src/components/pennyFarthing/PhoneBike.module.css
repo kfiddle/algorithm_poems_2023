@@ -2,12 +2,12 @@
     position: fixed;
     bottom: 10vh;
     z-index: 3;
-    animation: rideWillow 30s linear;
+    animation: rideWillow 15s linear;
   }
   
   .bigWheel {
     position: relative;
-    animation: spin infinite 10s linear;
+    animation: spin infinite 5s linear;
   }
   
   .pennyFrame {
@@ -18,7 +18,7 @@
   
   .smallWheel {
     position: relative;
-    animation: smallSpin infinite 4s linear;
+    animation: smallSpin infinite 2s linear;
   }
   
   @keyframes spin {

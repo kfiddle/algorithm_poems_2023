@@ -4,7 +4,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import MenuItem from './MenuItem';
 
-import styles from './SideBar.module.css';
+import deskStyles from './DeskSideBar.module.css';
+import phoneStyles from './PhoneSideBar.module.css';
 
 const SideBar = ({ choice, menuList, visible }) => {
   const [displayedMenuItems, setDisplayedMenuItems] = useState([]);
@@ -20,6 +21,8 @@ const SideBar = ({ choice, menuList, visible }) => {
   const [options, setOptions] = useState(['', '', '']);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const styles = !isMobile ? deskStyles : phoneStyles;
+
 
   const clicked = (chosen) => {
     choice(chosen);

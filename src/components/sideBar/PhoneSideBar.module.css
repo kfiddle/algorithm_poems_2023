@@ -1,0 +1,32 @@
+.sideBarDiv {
+  position: absolute;
+  margin-top: 50vh;
+  border-top-right-radius: 6px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 50vw;
+  text-align: end;
+  animation: flare .75s cubic-bezier(0.19, 1, 0.45, 0.99);
+
+  background: linear-gradient(to Right, transparent, transparent, rgb(116, 107, 107), rgb(33, 39, 44));
+  transform: translateX(2vw);
+}
+
+@keyframes flare {
+  0% {
+    background: linear-gradient(to Right, rgb(94, 92, 92), rgb(94, 92, 92), rgb(104, 96, 96), rgb(221, 217, 217));
+    transform: translateX(-35vw);
+  }
+  10% {
+    background: linear-gradient(to Right, rgb(196, 191, 191), rgb(196, 191, 191), rgb(196, 191, 191), rgb(196, 191, 191), rgb(163, 153, 153), rgb(148, 142, 142));
+    transform: translateX(-20vw); /* Adjust the timing for the transition */
+  }
+  100% {
+    background: linear-gradient(to Right, transparent, transparent, rgb(116, 107, 107), rgb(33, 39, 44));
+    transform: translateX(2vw);
+  }
+}
+
+
