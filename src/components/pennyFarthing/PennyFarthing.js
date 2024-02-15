@@ -10,33 +10,22 @@ const PennyFarthing = ({ smallWheel, pennyFrame, bigWheel }) => {
 
   const styles = !isMobile ? deskStyles : phoneStyles;
 
-  const [bikePosition, setBikePosition] = useState(0);
+  const [bikePosition, setBikePosition] = useState(-50);
   const screenWidth = window.innerWidth;
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Calculate the current horizontal position of the bike
-      const currentPosition = bikePosition + window.scrollX;
-
-      // Determine when to unmount the component (e.g., when it's off the right side)
-      if (currentPosition > screenWidth) {
-        // Perform any cleanup or additional actions if needed
-        // Then unmount the component
-        setBikePosition(currentPosition);
-      }
+    const moveBike = () => {
+      console.log(bikePosition);
+      setBikePosition((prevPosition) => prevPosition + 0.2); // Increment the position by 1 vw
     };
 
-    // Attach the scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    const interval = setInterval(moveBike, 25); // Move the bike every 10 milliseconds
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [bikePosition, screenWidth]);
+    return () => clearInterval(interval); // Clean up the interval when the component unmounts
+  }, []);
 
-  return bikePosition > screenWidth ? null : (
-    <div className={styles.bikeContainer}>
+  return bikePosition > 150 ? null : (
+    <div className={styles.bikeContainer} style={{ transform: `translateX(${bikePosition}vw)` }}>
       <img src={smallWheel} className={styles.smallWheel}></img>
       <img src={pennyFrame} className={styles.pennyFrame}></img>
       <img src={bigWheel} className={styles.bigWheel}></img>

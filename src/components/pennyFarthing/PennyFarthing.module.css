@@ -35,11 +35,11 @@
   }
 }
 
-@keyframes rideWillow {
+/* @keyframes rideWillow {
   from {
     transform: translateX(-30vw);
   }
   to {
     transform: translateX(140vw);
   }
-}
+} */

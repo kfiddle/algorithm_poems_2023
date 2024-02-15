@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-
-import { useMediaQuery } from "react-responsive";
-
+import { useMediaQuery } from 'react-responsive';
 
 import Header from './components/header/Header';
 import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOfficerStripes';
@@ -60,7 +58,6 @@ const birds = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bi
 
 const menuList = [ABOUTME, CURRENTPROJECTS, CONTACT];
 
-
 function App() {
   const [showPennyFarthing, setShowPennyFarthing] = useState(false);
   const [stripesClicked, setStripesClicked] = useState(false);
@@ -75,18 +72,13 @@ function App() {
       setShowPennyFarthing(true);
     }, 1500);
 
-    const unmountDelay = setTimeout(() => {
-      setShowPennyFarthing(false);
-    }, 22000);
-
     const showSideBar = setTimeout(() => {
-      // setStripesClicked(true)
+      setStripesClicked(true)
     }, 5000);
 
     return () => {
       clearTimeout(showDelay);
-      clearTimeout(unmountDelay);
-      clearTimeout(showSideBar)
+      clearTimeout(showSideBar);
     };
   }, []);
 
@@ -114,8 +106,6 @@ function App() {
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
 
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
-
-
 
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}

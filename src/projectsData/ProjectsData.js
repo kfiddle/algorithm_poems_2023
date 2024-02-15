@@ -74,8 +74,8 @@ const SymCraftInfo = () => {
       <div>
         &nbsp;&nbsp;&nbsp;Professional orchestral management is a unique challenge. A symphonic performance might take place over the course
         of several nights on a given weekend, each with 100+ players onstage, and sometimes even with different players in different chairs.
-        Instrumental rosters are determined separately by each piece of music, wind doublings must be ironed out, players must be seated and
-        often rotated, and to add to the complexity, they are very often hired on a substitute basis and travel long distances.
+        Instrumental rosters are determined separately by each piece of music, players must be seated and
+        often rotated, and they are very often hired on a substitute.
       </div>
       <div style={{ marginTop: '1rem' }}>
         &nbsp;&nbsp;&nbsp;This app automates as much of this process as possible, from generating rosters from scores even to communicating

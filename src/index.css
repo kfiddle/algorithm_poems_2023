@@ -1,3 +1,7 @@
+* {
+  font-weight: 900;
+}
+
 body {
   margin: 0;
   height: 100vh;

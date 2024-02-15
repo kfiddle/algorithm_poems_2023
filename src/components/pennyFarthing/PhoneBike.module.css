@@ -7,7 +7,7 @@
   
   .bigWheel {
     position: relative;
-    animation: spin infinite 5s linear;
+    animation: spin infinite 8s linear;
   }
   
   .pennyFrame {
@@ -18,7 +18,7 @@
   
   .smallWheel {
     position: relative;
-    animation: smallSpin infinite 2s linear;
+    animation: smallSpin infinite 4s linear;
   }
   
   @keyframes spin {
@@ -39,11 +39,11 @@
     }
   }
   
-  @keyframes rideWillow {
+  /* @keyframes rideWillow {
     from {
       transform: translateX(-60vw);
     }
     to {
       transform: translateX(200vw);
     }
-  }
+  } */
