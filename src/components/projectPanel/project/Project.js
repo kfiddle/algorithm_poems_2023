@@ -31,6 +31,16 @@ const Project = ({ project, scrollBackUp }) => {
     </div>
   ));
 
+  const gallery1 = slides.map((slide, index) => (
+    <div
+      key={slide.id}
+      className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
+      style={{ transform: `translateY(calc(-${currentIndex * 100}% + 2rem))` }} /* Updated translateY for vertical scrolling */
+    >
+      <img src={slide.src} className={styles.image} alt={slide.alt} />
+    </div>
+  ));
+
   const gridSquares = Array.from({ length: 9 }, (_, i) => (
     <div key={i} className={styles.square}></div>
   ));
@@ -38,7 +48,7 @@ const Project = ({ project, scrollBackUp }) => {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
-          <div className={styles.infoDiv}>{info}</div>
+        <div className={styles.infoDiv}>{info}</div>
 
         <div className={styles.sliderControlDiv}>
           <div className={styles.gridContainer} onClick={scrollOutHandler}>
@@ -57,7 +67,7 @@ const Project = ({ project, scrollBackUp }) => {
         </div>
       </div>
       <div className={styles.imagesWrapper}>
-        <div className={styles.imagesContainer}>{gallery}</div>
+        <div className={styles.imagesContainer}>{gallery1}</div>
       </div>
     </div>
   );
