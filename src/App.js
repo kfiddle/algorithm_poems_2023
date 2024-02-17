@@ -49,6 +49,7 @@ import ProjectPanel from './components/projectPanel/ProjectPanel';
 
 import deskStyles from './AppDesk.module.css';
 import phoneStyles from './AppPhone.module.css';
+import Clock from './components/clock/Clock';
 
 const ABOUTME = 'ABOUT ME';
 const CURRENTPROJECTS = 'CURRENT PROJECTS';
@@ -126,6 +127,7 @@ function App() {
       {clickedChoice === CONTACT && <ContactFormPanel />}
       {clickedChoice === CURRENTPROJECTS && <ProjectPanel projects={projects} />}
       <Bird birds={birds} />
+      <Clock />
     </div>
   );
 }

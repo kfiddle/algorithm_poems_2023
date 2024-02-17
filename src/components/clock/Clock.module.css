@@ -1,0 +1,80 @@
+.outerContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 30%;
+    height: 50rem;
+    width: 50rem;
+    background: linear-gradient(to bottom, rgb(113, 14, 170), violet, rgb(185, 123, 9));
+}
+
+@keyframes colorCycle {
+    0% {
+        /* background-color: rgb(215, 185, 16); */
+        background-color: rgb(128, 4, 91);
+    }
+
+    25% {
+        /* background-color: violet; */
+        background: linear-gradient(to bottom, rgb(206, 26, 206), rgb(161, 110, 13));
+    }
+
+    50% {
+        /* background-color: rgb(25, 25, 194); */
+        background: linear-gradient(to bottom, rgb(206, 26, 206), rgb(161, 110, 13));
+
+    }
+
+    75% {
+        background: linear-gradient(to bottom, rgb(130, 7, 130), rgb(161, 110, 13));
+    }
+
+    100% {
+        background-color:rgb(128, 4, 91);
+    }
+}
+
+.outerCircle {
+    position: relative;
+    /* Required for absolute positioning of moving circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: colorCycle 60s linear infinite;
+
+}
+
+.blackCenter {
+    position: absolute;
+    top: 50%;
+    /* Adjust if needed */
+    left: 50%;
+    /* Adjust if needed */
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background: black;
+    opacity: 0.9;
+    z-index: 1;
+    /* Ensure the black circle is above the moving circle */
+}
+
+.movingCircle {
+    /* position: absolute;
+    right: 0;
+    bottom: 0%;  */
+    width: 20rem;
+    /* Adjust size as needed */
+    height: 20rem;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    background: linear-gradient(red, white);
+    opacity: 0.5;
+    z-index: 2;
+}

@@ -7,7 +7,6 @@ import phoneStyles from './PhoneBike.module.css';
 
 const PennyFarthing = ({ smallWheel, pennyFrame, bigWheel, bikePosition }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  console.log(bikePosition)
   const styles = !isMobile ? deskStyles : phoneStyles;
 
   return (
