@@ -11,7 +11,7 @@ import harmonodeShot1 from '../assets/harmonode/harmonodeShot1.png';
 import harmonodeGIF1 from '../assets/harmonode/harmonodeGIF1.gif';
 import harmonodeGIF2 from '../assets/harmonode/harmonodeGIF2.gif';
 
-import addGigCalendar from '../assets/symCraft/addGigCalendar.png';
+import Calendar1 from '../assets/symCraft/Calendar1.png';
 import library from '../assets/symCraft/library.png';
 import LibraryInstEntry1 from '../assets/symCraft/LibraryInstEntry1.png';
 import librarySingleInput from '../assets/symCraft/librarySingleInput.png';
@@ -121,7 +121,7 @@ export const projects = [
     slides: [
       { id: 1, src: library, alt: 'library view' },
       { id: 2, src: librarySingleInput, alt: 'vertical library view ' },
-      { id: 3, src: addGigCalendar, alt: 'add performance view' },
+      { id: 3, src: Calendar1, alt: 'add performance view' },
       { id: 4, src: LibraryInstEntry1, alt: 'add instrumentation view' },
     ],
   },
