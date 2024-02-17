@@ -74,7 +74,7 @@ function App() {
 
     const showSideBar = setTimeout(() => {
       setStripesClicked(true)
-    }, 5000);
+    }, 7500);
 
     return () => {
       clearTimeout(showDelay);
