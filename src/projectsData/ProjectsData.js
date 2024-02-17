@@ -30,10 +30,8 @@ const HarmonodeInfo = () => {
         application can be complex, and organizing these connections can quickly turn into a nightmare for a developer.
       </div>
       <div style={{ marginTop: '1rem' }}>
-        &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered development tool that lightens the challenges of endpoint management and
-        visualization. By harnessing the power of ReactFlow, Harmonode empowers users to seamlessly navigate through the web of connections,
-        offering a clear and concise visualization of the trail each route follows through the component tree of an app, from it's initial
-        request(s) in any frontend components, through the server, any middleware, and back again.
+        &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered dev tool which offers a clear visualization of the trail each route follows through the component tree of an app, from it's initial
+        request in any frontend components, through the server, any middleware, and back again.
       </div>
 
       <div className={styles.foundingFathersDiv}>
@@ -75,10 +73,10 @@ const SymCraftInfo = () => {
         &nbsp;&nbsp;&nbsp;Professional orchestral management is a unique challenge. A symphonic performance might take place over the course
         of several nights on a given weekend, each with 100+ players onstage, and sometimes even with different players in different chairs.
         Instrumental rosters are determined separately by each piece of music, players must be seated and
-        often rotated, and they are very often hired on a substitute.
+        often rotated, and they are very often hired on a substitute basis.
       </div>
       <div style={{ marginTop: '1rem' }}>
-        &nbsp;&nbsp;&nbsp;This app automates as much of this process as possible, from generating rosters from scores even to communicating
+        &nbsp;&nbsp;&nbsp;This app automates as much of this process as possible, from generating rosters to communicating
         details to a player’s portal, available to the musicians themselves.
       </div>
     </div>

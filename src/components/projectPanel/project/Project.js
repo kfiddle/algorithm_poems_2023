@@ -21,21 +21,12 @@ const Project = ({ project, scrollBackUp }) => {
     setCurrentIndex((prevIndex) => (prevIndex < slides.length - 1 ? prevIndex + 1 : prevIndex));
   };
 
+
   const gallery = slides.map((slide, index) => (
     <div
       key={slide.id}
       className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-      style={{ transform: `translateY(calc(-${currentIndex * 100}% + 2rem))` }} /* Updated translateY for vertical scrolling */
-    >
-      <img src={slide.src} className={styles.image} alt={slide.alt} />
-    </div>
-  ));
-
-  const gallery1 = slides.map((slide, index) => (
-    <div
-      key={slide.id}
-      className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-      style={{ transform: `translateY(calc(-${currentIndex * 100}% + 2rem))` }} /* Updated translateY for vertical scrolling */
+      style={{ transform: `translateY(calc(-${currentIndex * 100}%))` }} /* Updated translateY for vertical scrolling */
     >
       <img src={slide.src} className={styles.image} alt={slide.alt} />
     </div>
@@ -67,7 +58,7 @@ const Project = ({ project, scrollBackUp }) => {
         </div>
       </div>
       <div className={styles.imagesWrapper}>
-        <div className={styles.imagesContainer}>{gallery1}</div>
+        <div className={styles.imagesContainer}>{gallery}</div>
       </div>
     </div>
   );

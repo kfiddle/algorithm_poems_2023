@@ -1,19 +1,23 @@
-/* Your original CSS styles */
-
 .outerContainer {
   display: flex;
   height: 90vh;
-  background: rgb(82, 79, 96);
-  border: 3px solid rgb(112, 128, 144);
-  font-size: 1.25rem;
+  background: rgba(56, 53, 72);
+  /* border: 3px solid rgb(112, 128, 144); */
+  box-shadow: 0px 3px 8px 5px rgba(236, 235, 239, 0.2);
+  font-size: 1.1rem;
 }
 
 .infoContainer {
   position: relative;
   flex: 1;
   display: flex;
-  background-color: rgb(152, 150, 167);
-  border-right: 3px solid rgb(112, 128, 144);
+
+  /* background-color: rgb(153, 149, 179); */
+
+  background-color: rgb(216, 211, 230);
+  box-shadow: 3px 0px 2px rgba(166, 163, 179, 0.2);
+
+  /* border-right: 3px solid rgb(112, 128, 144); */
   overflow-y: auto;
   /* Enable vertical scrolling for the infoContainer */
 }
@@ -34,9 +38,9 @@
 .sliderControlDiv {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   padding-bottom: 1rem;
-  border-left: solid 3px rgb(112, 128, 144);
+  background: linear-gradient(to top, rgb(216, 211, 230), rgb(216, 211, 230), rgb(216, 211, 230), rgb(208, 203, 224));
+  box-shadow: 0px 3px 5px rgba(132, 117, 197, 0.25);
 }
 
 .sliderControlDiv>* {
@@ -45,29 +49,24 @@
 
 .gridContainer {
   width: 2.5rem;
-  /* Adjust this according to your preference */
   height: 2.5rem;
-  /* Adjust this according to your preference */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 2px;
-  /* Adjust the gap between squares */
   cursor: pointer;
 }
 
-/* Style for the small squares */
+/* the small squares */
 .square {
   width: 0.75rem;
-  /* Adjust this according to your preference */
   height: 0.75rem;
-  /* Adjust this according to your preference */
   background-color: #000;
 
-  /* Color of the squares */
   .gridContainer:hover & {
-    background-color: lightblue;
-    /* Change the color on hover */
+    background-color: rgb(147, 122, 212);
+    box-shadow: 2px 2px 3px rgba(97, 81, 169, 0.25);
+
   }
 }
 
@@ -84,11 +83,13 @@
 }
 
 .arrowIcon:hover {
-  fill: lightblue;
+  fill: rgb(147, 122, 212);
+
 }
 
 .arrow:hover {
   border: solid lightblue;
+  box-shadow: 2px 2px 3px rgba(97, 81, 169, 0.25);
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
@@ -109,7 +110,6 @@
   flex-direction: column;
   /* Stack images vertically */
   gap: 2rem;
-  /* Adjust the gap between images */
   overflow: hidden;
 
 }
@@ -128,14 +128,13 @@
   overflow: hidden;
 }
 
-.imageDivTEST {
-
-}
+.imageDivTEST {}
 
 .image {
-  width: 95%; /* Make the image fill the width of the container */
+  width: 95%;
+  /* Make the image fill the width of the container */
   /* height: 100%; */
-  object-fit: cover; 
+  object-fit: cover;
   /* max-width: 100%; */
   /* height: auto; */
   /* max-height: 100%;  */
