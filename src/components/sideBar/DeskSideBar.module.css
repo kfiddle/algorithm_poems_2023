@@ -8,27 +8,27 @@
   height: 100vh;
   width: 30vw;
   text-align: end;
-  animation: flare 1s cubic-bezier(0.19, 1, 0.45, 0.99);
-
-  background: linear-gradient(to Right, transparent, transparent, rgb(65, 62, 76), rgb(48, 48, 67));
+  background: linear-gradient(to Right, transparent, rgb(65, 62, 76), rgb(48, 48, 67));
+  /* background-size: 200% auto; */
   transform: translateX(2vw);
+  animation: flare 1s cubic-bezier(0.19, 1, 0.45, 0.99);
   transition: 1s;
 }
 
+/* @keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+} */
+
 @keyframes flare {
   0% {
-    background: linear-gradient(to Right, rgb(94, 92, 92), rgb(94, 92, 92), rgb(104, 96, 96), rgb(83, 80, 105));
+    background: linear-gradient(to Right, transparent, rgb(102, 97, 122), rgb(102, 102, 171));
     transform: translateX(-35vw);
   }
-  /* 5% {
-    background: linear-gradient(to Right, rgb(173, 169, 169), rgb(165, 163, 171), rgb(196, 191, 191), rgb(196, 191, 191), rgb(163, 153, 153), rgb(139, 134, 134));
-    transform: translateX(-20vw); 
-  } */
 
   100% {
-    background: linear-gradient(to Right, transparent, transparent, rgb(65, 62, 76), rgb(48, 48, 67));
+    background: linear-gradient(to Right, transparent, rgb(65, 62, 76), rgb(48, 48, 67));
     transform: translateX(2vw);
   }
 }
-
-
