@@ -59,7 +59,8 @@ const birds = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bi
 const menuList = [ABOUTME, CURRENTPROJECTS, CONTACT];
 
 function App() {
-  const [showPennyFarthing, setShowPennyFarthing] = useState(false);
+  const [showPennyFarthing, setShowPennyFarthing] = useState(true);
+  const [bikePosition, setBikePosition] = useState(-50);
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -68,19 +69,33 @@ function App() {
   const styles = !isMobile ? deskStyles : phoneStyles;
 
   useEffect(() => {
+    const showSideBar = setTimeout(() => {
+      setStripesClicked(true)
+    }, 7000);
+
+    return () => clearTimeout(showSideBar);
+  }, [])
+
+  useEffect(() => {
     const showDelay = setTimeout(() => {
       setShowPennyFarthing(true);
     }, 1500);
 
-    const showSideBar = setTimeout(() => {
-      setStripesClicked(true)
-    }, 5000);
+    const moveBike = () => {
+      setBikePosition((prevPosition) => prevPosition + 0.2); // Increment the position by 1 vw
+    };
+
+    const interval = setInterval(moveBike, 25);
+
+    if (bikePosition > 110) {
+      setShowPennyFarthing(false)
+    }
 
     return () => {
+      clearInterval(interval);
       clearTimeout(showDelay);
-      clearTimeout(showSideBar);
     };
-  }, []);
+  }, [bikePosition]);
 
   const choiceHandler = (chosen) => {
     setClickedChoice(chosen);
@@ -103,7 +118,7 @@ function App() {
       </div>
 
       <Header isVisible={isHeaderVisible} />
-      {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} />}
+      {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} bikePosition={bikePosition} />}
 
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
 

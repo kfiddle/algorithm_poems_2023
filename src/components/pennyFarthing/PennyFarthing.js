@@ -5,26 +5,12 @@ import { useMediaQuery } from 'react-responsive';
 import deskStyles from './PennyFarthing.module.css';
 import phoneStyles from './PhoneBike.module.css';
 
-const PennyFarthing = ({ smallWheel, pennyFrame, bigWheel }) => {
+const PennyFarthing = ({ smallWheel, pennyFrame, bigWheel, bikePosition }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-
+  console.log(bikePosition)
   const styles = !isMobile ? deskStyles : phoneStyles;
 
-  const [bikePosition, setBikePosition] = useState(-50);
-  const screenWidth = window.innerWidth;
-
-  useEffect(() => {
-    const moveBike = () => {
-      console.log(bikePosition);
-      setBikePosition((prevPosition) => prevPosition + 0.2); // Increment the position by 1 vw
-    };
-
-    const interval = setInterval(moveBike, 25); // Move the bike every 10 milliseconds
-
-    return () => clearInterval(interval); // Clean up the interval when the component unmounts
-  }, []);
-
-  return bikePosition > 150 ? null : (
+  return (
     <div className={styles.bikeContainer} style={{ transform: `translateX(${bikePosition}vw)` }}>
       <img src={smallWheel} className={styles.smallWheel}></img>
       <img src={pennyFrame} className={styles.pennyFrame}></img>
