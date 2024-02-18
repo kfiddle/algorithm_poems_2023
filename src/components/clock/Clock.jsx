@@ -2,44 +2,45 @@ import React, { useState, useEffect } from "react";
 import styles from "./Clock.module.css";
 
 const Clock = () => {
-    const [angle, setAngle] = useState(0);
-    const [radius, setRadius] = useState(138); // Radius of the circular path
     const [positionX, setPositionX] = useState(0);
     const [positionY, setPositionY] = useState(-44);
-    const duration = 60000; // Duration in milliseconds (30 seconds)
+    const duration = 60000; 
 
     useEffect(() => {
-        const startTime = Date.now();
+        const moveClockwise = (startTime) => {
+            const currentAngle = ((Date.now() - startTime) / duration) * 360; // Angle in degrees
 
-        const updatePosition = () => {
-            const elapsedTime = Date.now() - startTime;
-            const progress = elapsedTime / duration;
-            const currentAngle = progress * 360; // Angle in degrees
-            
             // Calculate new position based on angle and radius
-            const newX = radius * Math.cos(currentAngle * Math.PI / 180);
-            const newY = radius * Math.sin(currentAngle * Math.PI / 180);
+            const newX = Math.cos((currentAngle * Math.PI) / 180) * 30;
+            const newY = Math.sin((currentAngle * Math.PI) / 180) * 30;
 
-            setAngle(currentAngle);
+            // setAngle(currentAngle);
             setPositionX(newX);
             setPositionY(newY);
-            
-            if (elapsedTime < duration) {
-                requestAnimationFrame(updatePosition);
+
+            if (Date.now() - startTime < duration) {
+                requestAnimationFrame(() => moveClockwise(startTime)); // Pass startTime parameter
+            } else {
+                // setAngle(0);
+                setPositionX(0);
+                setPositionY(-44);
+                moveClockwise(Date.now());
             }
         };
 
-        updatePosition();
-
-    }, [radius, duration]);
+        moveClockwise(Date.now());
+    }, [duration]);
 
     return (
         <div className={styles.outerContainer}>
             <div className={styles.outerCircle}>
-                <div className={styles.movingCircle} style={{ transform: `translate(${positionX}px, ${positionY}px)` }} />
+                <div className={styles.movingCircle} style={{ transform: `translate(${positionX}%, ${positionY}%)` }} />
             </div>
 
-            <div className={styles.blackCenter}></div>
+            <div className={styles.blackCenter}>
+                <div className={styles.hourHand} style={{ transform: `translate(45%, 0%) rotate(${320}deg)` }}></div>
+                <div className={styles.minuteHand} style={{ transform: `translate(45%, 0%) rotate(${100}deg)` }}></div>
+            </div>
         </div>
     );
 };
