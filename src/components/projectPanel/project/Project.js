@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Project.module.css';
 
 import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
 
 const Project = ({ project, scrollBackUp }) => {
   const { title, info, slides } = project;
-
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const imageDivHeight = window.innerHeight * 0.9;
 
   const scrollOutHandler = () => {
     setCurrentIndex(0);
     scrollBackUp();
-  }
+  };
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
@@ -21,20 +22,20 @@ const Project = ({ project, scrollBackUp }) => {
     setCurrentIndex((prevIndex) => (prevIndex < slides.length - 1 ? prevIndex + 1 : prevIndex));
   };
 
-
   const gallery = slides.map((slide, index) => (
     <div
       key={slide.id}
       className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ''}`}
-      style={{ transform: `translateY(calc(-${currentIndex * 100}%))` }} /* Updated translateY for vertical scrolling */
+      style={{
+        transform: `translateY(calc(-${currentIndex * 100}%))`,
+        height: imageDivHeight,
+      }} /* Updated translateY for vertical scrolling */
     >
       <img src={slide.src} className={styles.image} alt={slide.alt} />
     </div>
   ));
 
-  const gridSquares = Array.from({ length: 9 }, (_, i) => (
-    <div key={i} className={styles.square}></div>
-  ));
+  const gridSquares = Array.from({ length: 9 }, (_, i) => <div key={i} className={styles.square}></div>);
 
   return (
     <div className={styles.outerContainer}>
@@ -46,14 +47,20 @@ const Project = ({ project, scrollBackUp }) => {
             {gridSquares}
           </div>
           <div className={styles.arrowBox}>
-            <BiSolidUpArrow onClick={handlePrevClick} style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }} className={styles.arrowIcon} />
-
+            <BiSolidUpArrow
+              onClick={handlePrevClick}
+              style={{ visibility: currentIndex > 0 ? 'visible' : 'hidden' }}
+              className={styles.arrowIcon}
+            />
           </div>
           <div className={styles.arrowBox}>
-
-            <BiSolidDownArrow onClick={handleNextClick} style={{
-              visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
-            }} className={styles.arrowIcon} />
+            <BiSolidDownArrow
+              onClick={handleNextClick}
+              style={{
+                visibility: currentIndex < slides.length - 1 ? 'visible' : 'hidden',
+              }}
+              className={styles.arrowIcon}
+            />
           </div>
         </div>
       </div>

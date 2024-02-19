@@ -1,52 +1,47 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Clock.module.css";
+import React, { useState, useEffect } from 'react';
+import styles from './Clock.module.css';
 
 const Clock = () => {
-    const [positionX, setPositionX] = useState(0);
-    const [positionY, setPositionY] = useState(-44);
-    const duration = 60000;
+  const [position, setPosition] = useState({ x: 0, y: -44 });
 
-    useEffect(() => {
-        const moveClockwise = (startTime) => {
-            const currentAngle = ((Date.now() - startTime) / duration) * 360; // Angle in degrees
+  useEffect(() => {
+    const sixtySeconds = 60000;
+    const moveClockwise = (startTime) => {
+      const currentAngle = ((Date.now() - startTime) / sixtySeconds) * 360; // Angle in degrees
 
-            const newX = Math.cos((currentAngle * Math.PI) / 180) * 30;
-            const newY = Math.sin((currentAngle * Math.PI) / 180) * 30;
+      const newX = Math.cos((currentAngle * Math.PI) / 180) * 30;
+      const newY = Math.sin((currentAngle * Math.PI) / 180) * 30;
+      setPosition({ x: newX, y: newY });
 
-            setPositionX(newX);
-            setPositionY(newY);
-
-            if (Date.now() - startTime < duration) {
-                requestAnimationFrame(() => moveClockwise(startTime)); // Pass startTime parameter
-            } else {
-                setPositionX(0);
-                setPositionY(-44);
-                moveClockwise(Date.now());
-            }
-        };
-
+      if (Date.now() - startTime < sixtySeconds) {
+        requestAnimationFrame(() => moveClockwise(startTime)); // Pass startTime parameter
+      } else {
+        setPosition({ x: 0, y: -44 });
         moveClockwise(Date.now());
+      }
+    };
 
-    }, [duration]);
+    moveClockwise(Date.now());
+  }, []);
 
-    const currentDate = new Date();
-    let hour = currentDate.getHours() % 12 || 12; // Convert to 12-hour format
-    let minute = currentDate.getMinutes();
-    let hourRotation = ((hour * 30) + (minute / 2) - 90); // Hour hand rotation in degrees
-    let minuteRotation = (minute * 6) - 90; // Minute hand rotation in degrees
+  const currentDate = new Date();
+  let hour = currentDate.getHours() % 12 || 12; // Convert to 12-hour format
+  let minute = currentDate.getMinutes();
+  let hourRotation = hour * 30 + minute / 2 - 90; // Hour hand rotation in degrees
+  let minuteRotation = minute * 6 - 90; // Minute hand rotation in degrees
 
-    return (
-        <div className={styles.outerContainer}>
-            <div className={styles.outerCircle}>
-                <div className={styles.movingCircle} style={{ transform: `translate(${positionX}%, ${positionY}%)` }} />
-            </div>
+  return (
+    <div className={styles.outerContainer}>
+      <div className={styles.outerCircle}>
+        <div className={styles.movingCircle} style={{ transform: `translate(${position.x}%, ${position.y}%)` }} />
+      </div>
 
-            <div className={styles.blackCenter}>
-                <div className={styles.hourHand} style={{ transform: `translate(45%, 0%) rotate(${hourRotation}deg)` }}></div>
-                <div className={styles.minuteHand} style={{ transform: `translate(45%, 0%) rotate(${minuteRotation}deg)` }}></div>
-            </div>
-        </div>
-    );
+      <div className={styles.blackCenter}>
+        <div className={styles.hourHand} style={{ transform: `translate(45%, 0%) rotate(${hourRotation}deg)` }}></div>
+        <div className={styles.minuteHand} style={{ transform: `translate(45%, 0%) rotate(${minuteRotation}deg)` }}></div>
+      </div>
+    </div>
+  );
 };
 
 export default Clock;
