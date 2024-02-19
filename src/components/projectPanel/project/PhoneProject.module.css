@@ -1,0 +1,142 @@
+.outerContainer {
+    /* display: flex; */
+    /* height: 100vh; */
+    margin-top: 10vh;
+    background: rgba(56, 53, 72);
+    /* border: 3px solid rgb(112, 128, 144); */
+    box-shadow: 0px 3px 8px 5px rgba(236, 235, 239, 0.2);
+    font-size: 14px;
+  }
+  
+  .infoContainer {
+    position: relative;
+    flex: 1;
+    display: flex;
+    background-color: rgb(216, 211, 230);
+    box-shadow: 3px 0px 2px rgba(166, 163, 179, 0.2);
+    overflow-y: auto;
+  }
+  
+  .titleHeader {
+    font-weight: 900;
+    font-size: 1rem;
+    font-family: 'Asap-Regular';
+    margin-bottom: 2rem;
+  }
+  
+  .infoDiv {
+    font-family: 'Asap-Regular';
+    letter-spacing: 0.15em;
+    padding: 1rem;
+  }
+  
+  .sliderControlDiv {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    background: linear-gradient(to top, rgb(216, 211, 230), rgb(216, 211, 230), rgb(216, 211, 230), rgb(208, 203, 224));
+    box-shadow: 0px 3px 5px rgba(132, 117, 197, 0.25);
+  }
+  
+  .sliderControlDiv>* {
+    margin: 1rem;
+  }
+  
+  .gridContainer {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    cursor: pointer;
+  }
+  
+  /* the small squares */
+  .square {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #000;
+  
+    .gridContainer:hover & {
+      background-color: rgb(147, 122, 212);
+      box-shadow: 2px 2px 3px rgba(97, 81, 169, 0.25);
+  
+    }
+  }
+  
+  .arrowBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arrowIcon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .arrowIcon:hover {
+    fill: rgb(147, 122, 212);
+  
+  }
+  
+  .arrow:hover {
+    border: solid lightblue;
+    box-shadow: 2px 2px 3px rgba(97, 81, 169, 0.25);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .imagesWrapper {
+    flex: 2;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  .imagesContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    /* Stack images vertically */
+    /* gap: 2rem; */
+    overflow: hidden;
+  
+  }
+  
+  .imageDiv {
+    flex: 0 0 auto;
+    /* Fix width for each slide */
+    width: 100%;
+    /* height: 45rem; */
+    margin: 0;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .imageDivTEST {}
+  
+  .image {
+    width: 95%;
+    /* Make the image fill the width of the container */
+    /* height: 100%; */
+    object-fit: cover;
+    /* max-width: 100%; */
+    /* height: auto; */
+    /* max-height: 100%;  */
+    /* Limit image height */
+    /* object-fit: contain;  */
+    /* Maintain aspect ratio without cropping */
+    border-radius: 10px;
+    /* Example border radius */
+    box-shadow: 0 5px 10px rgba(130, 115, 115, 0.2);
+  }

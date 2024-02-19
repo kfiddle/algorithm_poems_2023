@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useMediaQuery } from 'react-responsive';
+
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { AiFillHome } from 'react-icons/ai';

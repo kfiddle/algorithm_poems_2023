@@ -8,16 +8,6 @@
   height: 90vh;
   border-radius: 10px;
   background: #708090;
-  /* background: linear-gradient(
-    to Right,
-    rgb(46, 46, 48),
-    rgb(74, 71, 71),
-    rgb(74, 71, 71),
-    rgb(74, 71, 71),
-    #708090,
-    hsl(244, 9%, 32%)
-  ); */
-
   background: transparent;
   transition: 1s cubic-bezier(0.4, 0, 0.4, 1);
 }

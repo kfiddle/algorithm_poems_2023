@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import styles from './Project.module.css';
+
+
+import deskStyles from './DeskProject.module.css';
+import phoneStyles from './PhoneProject.module.css';
+
+import { useMediaQuery } from 'react-responsive';
 
 import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
 
 const Project = ({ project, scrollBackUp }) => {
+  
   const { title, info, slides } = project;
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const styles = !isMobile ? deskStyles : phoneStyles;
 
   const imageDivHeight = window.innerHeight * 0.9;
 
+  const top = !isMobile ? 9 : 0;
   const scrollOutHandler = () => {
     setCurrentIndex(0);
-    scrollBackUp();
+    scrollBackUp(top);
   };
 
   const handlePrevClick = () => {
