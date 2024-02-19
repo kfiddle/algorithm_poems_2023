@@ -62,8 +62,8 @@ const menuList = [ABOUTME, CURRENTPROJECTS, CONTACT];
 function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [showPennyFarthing, setShowPennyFarthing] = useState(true);
-  const [bikePosition, setBikePosition] = useState(isMobile ? -140 : -50);
-  const [bikeSpeed, setbikeSpeed] = useState(isMobile ? 10 : 25);
+  const [bikePosition, setBikePosition] = useState(isMobile ? -150 : -50);
+  const [bikeSpeed, setbikeSpeed] = useState(isMobile ? 5 : 25);
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -77,6 +77,15 @@ function App() {
 
     return () => clearTimeout(showSideBar);
   }, [])
+
+  useEffect(() => {
+    if (stripesClicked) {
+      if (bikePosition > 100) {
+        setBikePosition(isMobile ? -140 : -50)
+        setShowPennyFarthing(true)
+      }
+    }
+  }, [stripesClicked])
 
   useEffect(() => {
     const showDelay = setTimeout(() => {
@@ -120,13 +129,14 @@ function App() {
       </div>
 
       <Header isVisible={isHeaderVisible} />
-      {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} bikePosition={bikePosition} />}
 
       {stripesClicked && <SideBar menuList={menuList} choice={choiceHandler} visible={stripesClicked} />}
 
       {clickedChoice === ABOUTME && <AboutPanel headshot={headshot} />}
       {clickedChoice === CONTACT && <ContactFormPanel />}
       {clickedChoice === CURRENTPROJECTS && <ProjectPanel projects={projects} />}
+
+      {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} bikePosition={bikePosition} />}
       <Bird birds={birds} />
       <Clock />
     </div>

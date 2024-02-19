@@ -10,46 +10,44 @@ import styles from './Bird.module.css';
 
 
 const Bird = ({ birds }) => {
-  let [birdStyles, setBirdStyles] = useState([0, 0, 1]);
+  const [birdStyles, setBirdStyles] = useState({ vw: 0, vh: 1, opacity: 1 });
   let [imageNumber, setImageNumber] = useState(0);
-  // const isMobile = useMediaQuery({ maxWidth: 767 });
-
-
-  // const styles = !isMobile ? deskStyles : phoneStyles;
 
 
   useEffect(() => {
-    const flyAway = (i, birdNumber) => {
+    const flyAway = (interval = 0, birdNumber = 0) => {
       if (birdNumber > 12) {
         birdNumber = 8;
       }
 
       setTimeout(() => {
         setImageNumber(birdNumber);
-      }, 110 * i);
+      }, 110 * interval);
 
       birdNumber++;
-      i++;
+      interval++;
 
-      if (i < 35) {
-        flyAway(i, birdNumber);
+      if (interval < 35) {
+        flyAway(interval, birdNumber);
       }
     };
 
     setTimeout(() => {
-      flyAway(0, 0);
-      setBirdStyles([40, 15, 0]);
+      flyAway();
+      setBirdStyles({ vw: 40, vh: 15, opacity: 0 });
+
     }, 2000);
   }, []);
+
+  
 
   return (
     <img
       className={styles.bird}
-      // src={`../../assets/flyingBird/heron_inFlight-${imageNumber}.png`}
       src={birds[imageNumber]}
       style={{
-        transform: `translate(${birdStyles[0]}vw, -${birdStyles[1]}vh)`,
-        opacity: `${birdStyles[2]}`,
+        transform: `translate(${birdStyles.vw}vw, -${birdStyles.vh}vh)`,
+        opacity: `${birdStyles.opacity}`,
       }}
       alt="bird"
     ></img>
