@@ -60,13 +60,14 @@ const birds = [bird1, bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bi
 const menuList = [ABOUTME, CURRENTPROJECTS, CONTACT];
 
 function App() {
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const [showPennyFarthing, setShowPennyFarthing] = useState(true);
-  const [bikePosition, setBikePosition] = useState(-50);
+  const [bikePosition, setBikePosition] = useState(isMobile ? -140 : -50);
+  const [bikeSpeed, setbikeSpeed] = useState(isMobile ? 10 : 25);
   const [stripesClicked, setStripesClicked] = useState(false);
   const [clickedChoice, setClickedChoice] = useState('');
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
-  const isMobile = useMediaQuery({ maxWidth: 767 });
   const styles = !isMobile ? deskStyles : phoneStyles;
 
   useEffect(() => {
@@ -86,7 +87,7 @@ function App() {
       setBikePosition((prevPosition) => prevPosition + 0.2); // Increment the position by 1 vw
     };
 
-    const interval = setInterval(moveBike, 25);
+    const interval = setInterval(moveBike, bikeSpeed);
 
     if (bikePosition > 110) {
       setShowPennyFarthing(false)
