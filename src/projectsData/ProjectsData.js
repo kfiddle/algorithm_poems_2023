@@ -5,8 +5,9 @@ import { useMediaQuery } from 'react-responsive';
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 
+import Wave from '../assets/projectCardImages/Wave.jpg';
 import CelloTitleCard from '../assets/projectCardImages/CelloTitleCard.png';
-import HarmonodeTitleCard from '../assets/projectCardImages/HarmonodeTitleCard.png';
+import CoinVerseCard from '../assets/projectCardImages/CoinVerseCard.png';
 
 import harmonodeShot1 from '../assets/harmonode/harmonodeShot1.png';
 import harmonodeGIF1 from '../assets/harmonode/harmonodeGIF1.gif';
@@ -26,14 +27,14 @@ import InfoBox from '../components/projectPanel/InfoBox';
 export const projects = [
   {
     id: 1,
-    cardImage: HarmonodeTitleCard,
+    cardImage: Wave,
     infoBox: <InfoBox title={'Harmonode'}>
       <div>
         &nbsp;&nbsp;&nbsp;Managing endpoints, fetch requests, and data flow between the various client-side and backend components of an
         application can be complex, and organizing these connections can quickly turn into a nightmare for a developer.
       </div>
       <div style={{ marginTop: '1rem' }}>
-        &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered dev tool which offers a clear visualization of the trail each route follows through the component tree of an app, from it's initial
+        &nbsp;&nbsp;&nbsp;Harmonode is an Electron-powered development tool which offers a clear visualization of the trail each route follows through the component tree of an app, from it's initial
         request in any frontend components, through the server, any middleware, and back again.
       </div>
 
@@ -98,7 +99,7 @@ export const projects = [
   },
   {
     id: 3,
-    cardImage: CelloTitleCard,
+    cardImage: CoinVerseCard,
     infoBox: <InfoBox title={'coinVerse'}>
       <div style={{ marginTop: '1rem' }}>
         &nbsp;&nbsp;&nbsp;A cliché I know... every software developer makes a personal financial tracking app, and so this is mine. I've never
