@@ -5,6 +5,8 @@ import { useMediaQuery } from 'react-responsive';
 import Project from './project/Project';
 import ProjectCards from './projectCard/ProjectCards';
 
+
+
 import styles from './ProjectPanel.module.css';
 
 const ProjectPanel = ({ projects }) => {
@@ -12,7 +14,6 @@ const ProjectPanel = ({ projects }) => {
   const [clickedProject, setClickedProject] = useState(null);
 
   const bottom = window.innerHeight * 0.9;
-  const top = 9;
 
   const projectClicker = (id) => {
     setClickedProject(projects.find((pj) => pj.id === id));

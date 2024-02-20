@@ -10,7 +10,7 @@ import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
 
 const Project = ({ project, scrollBackUp }) => {
   
-  const { title, info, slides } = project;
+  const { title, infoBox, slides } = project;
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -50,7 +50,7 @@ const Project = ({ project, scrollBackUp }) => {
   return (
     <div className={styles.outerContainer}>
       <div className={styles.infoContainer}>
-        <div className={styles.infoDiv}>{info}</div>
+        <div className={styles.infoDiv}>{infoBox}</div>
 
         <div className={styles.sliderControlDiv}>
           <div className={styles.gridContainer} onClick={scrollOutHandler}>

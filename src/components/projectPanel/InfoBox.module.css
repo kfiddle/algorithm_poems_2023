@@ -1,0 +1,22 @@
+.outerContainer {}
+
+.titleHeader {
+    background: linear-gradient(to left, transparent, rgb(224, 218, 240), rgb(225, 223, 233), rgb(215, 210, 228), transparent);
+    background-size: 200% auto;
+    font-weight: 900;
+    font-size: 1.5rem;
+    font-family: 'Asap-Regular';
+    border-bottom: 3px solid rgb(208, 202, 226);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+.paraDiv {}

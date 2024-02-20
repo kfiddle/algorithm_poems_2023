@@ -4,7 +4,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import { FaLinkedin } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
-import { AiFillHome } from 'react-icons/ai';
 
 import CelloTitleCard from '../assets/projectCardImages/CelloTitleCard.png';
 import HarmonodeTitleCard from '../assets/projectCardImages/HarmonodeTitleCard.png';
@@ -22,11 +21,13 @@ import pennies1 from '../assets/pennies/pennies1.png';
 import transEntry from '../assets/pennies/transEntry.png';
 
 import styles from './ProjectsData.module.css';
+import InfoBox from '../components/projectPanel/InfoBox';
 
-const HarmonodeInfo = () => {
-  return (
-    <>
-      <div className={styles.titleHeader}>Harmonode</div>
+export const projects = [
+  {
+    id: 1,
+    cardImage: HarmonodeTitleCard,
+    infoBox: <InfoBox title={'Harmonode'}>
       <div>
         &nbsp;&nbsp;&nbsp;Managing endpoints, fetch requests, and data flow between the various client-side and backend components of an
         application can be complex, and organizing these connections can quickly turn into a nightmare for a developer.
@@ -63,48 +64,8 @@ const HarmonodeInfo = () => {
           </a>
         </div>
       </footer>
-    </>
-  );
-};
 
-const SymCraftInfo = () => {
-  return (
-    <div>
-      <div className={styles.titleHeader}>SymCraft</div>
-      <div>
-        &nbsp;&nbsp;&nbsp;Professional orchestral management is a unique challenge. A symphonic performance might take place over the course
-        of several nights on a given weekend, each with 100+ players onstage, and sometimes even with different players in different chairs.
-        Instrumental rosters are determined separately by each piece of music, players must be seated and
-        often rotated, and they are very often hired on a substitute basis.
-      </div>
-      <div style={{ marginTop: '1rem' }}>
-        &nbsp;&nbsp;&nbsp;This app automates as much of this process as possible, from generating rosters to communicating
-        details to a player’s portal, available to the musicians themselves.
-      </div>
-    </div>
-  );
-};
-
-const CoinInfo = () => {
-  return (
-    <div>
-      <div className={styles.titleHeader}>CoinVerse</div>
-      <div>
-        &nbsp;&nbsp;&nbsp;A cliché I know... every software developer makes a personal financial tracking app, and so this is mine. I've never
-        liked how the usual software packages do certain things, like associate categories with expenses, or make attaching things to a
-        calendar difficult, so this does everything as I need it done.
-      </div>
-      <div style={{ marginTop: '1rem' }}>&nbsp;&nbsp;&nbsp;Built in React with Node.js and mongoDB.</div>
-    </div>
-  );
-};
-
-export const projects = [
-  {
-    id: 1,
-    title: 'Harmonode',
-    cardImage: HarmonodeTitleCard,
-    info: <HarmonodeInfo />,
+    </InfoBox>,
 
     slides: [
       { id: 1, src: harmonodeShot1, alt: 'welcomeView' },
@@ -114,9 +75,19 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'SymCraft',
     cardImage: CelloTitleCard,
-    info: <SymCraftInfo />,
+    infoBox: <InfoBox title={'SymCraft'}>
+      <div style={{ marginTop: '1rem' }}>
+        &nbsp;&nbsp;&nbsp;Professional orchestral management is a unique challenge. A symphonic performance might take place over the course
+        of several nights on a given weekend, each with 100+ players onstage, and sometimes even with different players in different chairs.
+        Instrumental rosters are determined separately by each piece of music, players must be seated and
+        often rotated, and they are very often hired on a substitute basis.
+      </div>
+      <div style={{ marginTop: '1rem' }}>
+        &nbsp;&nbsp;&nbsp;This app automates as much of this process as possible, from generating rosters to communicating
+        details to a player’s portal, available to the musicians themselves.
+      </div>
+    </InfoBox>,
 
     slides: [
       { id: 1, src: library, alt: 'library view' },
@@ -127,14 +98,21 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'CoinVerse',
     cardImage: CelloTitleCard,
-    info: <CoinInfo />,
+    infoBox: <InfoBox title={'coinVerse'}>
+      <div style={{ marginTop: '1rem' }}>
+        &nbsp;&nbsp;&nbsp;A cliché I know... every software developer makes a personal financial tracking app, and so this is mine. I've never
+        liked how the usual software packages do certain things, like associate categories with expenses, or make attaching things to a
+        calendar difficult, so this does everything as I need it done...
+      </div>
+      <div style={{ marginTop: '1rem' }}>
+        &nbsp;&nbsp;&nbsp;Built in React with Node.js and mongoDB.
+      </div>
+    </InfoBox>,
 
     slides: [
       { id: 1, src: pennies1, alt: 'finance account ledger' },
       { id: 2, src: transEntry, alt: 'finance transaction entry view' },
-      // { id: 3, src: harmonodeGIF2, alt: 'harmonodeGIF2' },
     ],
   },
 ];

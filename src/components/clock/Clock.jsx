@@ -41,8 +41,8 @@ const Clock = () => {
             </div>
 
             <div className={styles.blackCenter}>
-                <div className={styles.hourHand} style={{ transform: `translate(45%, 0%) rotate(${hourRotation}deg)` }}></div>
-                <div className={styles.minuteHand} style={{ transform: `translate(45%, 0%) rotate(${minuteRotation}deg)` }}></div>
+                <div className={styles.hourHand} style={{ transform: `translate(45%, 0%) rotate(${hourRotation}deg)`, height: isMobile ? '8px' : '1rem' }}></div>
+                <div className={styles.minuteHand} style={{ transform: `translate(45%, 0%) rotate(${minuteRotation}deg)`, height: isMobile ? '8px' : '1rem'  }}></div>
             </div>
         </div>
     );
