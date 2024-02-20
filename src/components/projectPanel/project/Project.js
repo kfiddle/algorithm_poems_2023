@@ -6,7 +6,7 @@ import phoneStyles from './PhoneProject.module.css';
 
 import { useMediaQuery } from 'react-responsive';
 
-import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+import { BiCloudLightRain, BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
 
 const Project = ({ project, scrollBackUp }) => {
   
@@ -16,7 +16,10 @@ const Project = ({ project, scrollBackUp }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const styles = !isMobile ? deskStyles : phoneStyles;
 
-  const imageDivHeight = window.innerHeight * 0.9;
+  const windowHeight = window.innerHeight;
+  const infoBoxElement = document.querySelector(`.${styles.infoDiv}`);
+  const infoBoxHeight = infoBoxElement ? infoBoxElement.offsetHeight : 0;
+  const imageDivHeight = !isMobile ? window.innerHeight * 0.9 : windowHeight - (windowHeight * 0.1) - infoBoxHeight;
 
   const top = !isMobile ? 9 : 0;
   const scrollOutHandler = () => {

@@ -29,6 +29,7 @@ export const projects = [
     id: 1,
     cardImage: Wave,
     infoBox: <InfoBox title={'Harmonode'}>
+
       <div>
         &nbsp;&nbsp;&nbsp;Managing endpoints, fetch requests, and data flow between the various client-side and backend components of an
         application can be complex, and organizing these connections can quickly turn into a nightmare for a developer.
