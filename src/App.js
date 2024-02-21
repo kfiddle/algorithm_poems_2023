@@ -6,6 +6,8 @@ import Header from './components/header/Header';
 import WarrantOfficerStripes from './components/warrantOfficerStripes/WarrantOfficerStripes';
 import { projects } from './projectsData/ProjectsData.js';
 
+import { enableScroll, disableScroll } from './utils/utils';
+
 import bigWheel from './assets/bike/bigWheel.png';
 import pennyFrame from './assets/bike/pennyFrame.png';
 import smallWheel from './assets/bike/smallWheel-01.png';
@@ -99,6 +101,10 @@ function App() {
     if (chosen == CONTACT || chosen == CURRENTPROJECTS) {
       setIsHeaderVisible(false);
     }
+
+    if (chosen === ABOUTME) disableScroll();
+    else enableScroll();
+
     setStripesClicked(false);
   };
 
@@ -107,8 +113,8 @@ function App() {
     setClickedChoice('');
     setIsHeaderVisible(true);
   };
-  
-  const renderClock = clickedChoice === '' || clickedChoice === ABOUTME; 
+
+  const renderClock = clickedChoice === '' || clickedChoice === ABOUTME;
 
   return (
     <div className={styles.appDiv} >

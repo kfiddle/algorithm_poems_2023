@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+
+import { disableScroll, enableScroll } from '../../utils/utils';
+
 import DeskProject from './project/DeskProject';
 import ProjectCards from './projectCard/ProjectCards';
 import PhoneProject from './project/PhoneProject';
@@ -10,6 +13,11 @@ const ProjectPanel = ({ projects }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [clickedProject, setClickedProject] = useState(null);
 
+  useEffect(() => {
+    if (!clickedProject) disableScroll();
+    else if (clickedProject) enableScroll();
+  }, [clickedProject])
+
   const bottom = window.innerHeight * 0.9;
 
   const projectClicker = (id) => {
@@ -17,9 +25,9 @@ const ProjectPanel = ({ projects }) => {
     scroller(bottom);
   };
 
-  const scroller = (position) => window.scrollTo({ top: position, behavior: 'smooth' });
 
-  const clickedAndPhone = clickedProject && isMobile ? true : false;
+
+  const scroller = (position) => window.scrollTo({ top: position, behavior: 'smooth' });
 
   return (
     <div className={styles.outerContainer} style={{ marginTop: !isMobile ? '14vh' : '' }}>

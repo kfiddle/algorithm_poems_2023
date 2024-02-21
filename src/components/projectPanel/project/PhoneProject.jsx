@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import { LuArrowBigUpDash } from "react-icons/lu";
 import styles from "./PhoneProject.module.css";
 
 const PhoneProject = ({ project, scrollBackUp }) => {
@@ -10,7 +12,7 @@ const PhoneProject = ({ project, scrollBackUp }) => {
     const windowHeight = window.innerHeight;
     const infoBoxElement = document.querySelector(`.${styles.infoDiv}`);
     const infoBoxHeight = infoBoxElement ? infoBoxElement.offsetHeight : 0;
-    const imageDivHeight = windowHeight - windowHeight * 0.1 - infoBoxHeight;
+    // const imageDivHeight = windowHeight - windowHeight * 0.1 - infoBoxHeight;
 
     const top = 0;
     const scrollOutHandler = () => {
@@ -32,8 +34,9 @@ const PhoneProject = ({ project, scrollBackUp }) => {
             className={`${styles.imageDiv} ${index === currentIndex ? styles.active : ""}`}
             style={{
                 transform: `translateY(calc(-${currentIndex * 100}%))`,
-                height: imageDivHeight,
-            }} /* Updated translateY for vertical scrolling */
+                margin: "1rem 0rem",
+                // height: imageDivHeight,
+            }}
         >
             <img src={slide.src} className={styles.image} alt={slide.alt} />
         </div>
@@ -43,15 +46,12 @@ const PhoneProject = ({ project, scrollBackUp }) => {
 
     return (
         <div className={styles.outerContainer} style={{ overflowY: "auto" }}>
-            <div className={styles.infoContainer}>
-                {/* <div className={styles.infoDiv}>{infoBox}</div> */}
-
-                <div className={styles.sliderControlDiv}>
-                    <div className={styles.gridContainer} onClick={scrollOutHandler}>
-                        {gridSquares}
-                    </div>
-                </div>
+            <div className={styles.upArrowDiv}>
+                <LuArrowBigUpDash onClick={scrollBackUp}/>
             </div>
+
+            <div className={styles.infoContainer}>{infoBox}</div>
+
             <div className={styles.imagesWrapper}>
                 <div className={styles.imagesContainer}>{gallery}</div>
             </div>

@@ -4,7 +4,7 @@
     margin-top: 10vh;
     background: rgba(56, 53, 72);
     /* border: 3px solid rgb(112, 128, 144); */
-    box-shadow: 0px 3px 8px 5px rgba(236, 235, 239, 0.2);
+    /* box-shadow: 0px 3px 8px 5px rgba(236, 235, 239, 0.2); */
     font-size: 14px;
     /* overflow-y: auto; */
     overflow: auto;
@@ -14,9 +14,11 @@
     position: relative;
     flex: 1;
     display: flex;
+    padding: 1rem;
     background-color: rgb(216, 211, 230);
-    box-shadow: 3px 0px 2px rgba(166, 163, 179, 0.2);
     overflow-y: auto;
+    box-shadow: 0px 1px 2px 2px rgba(66, 7, 242, 0.2);
+
   }
   
   .titleHeader {
@@ -30,6 +32,13 @@
     font-family: 'Asap-Regular';
     letter-spacing: 0.15em;
     padding: 1rem;
+  }
+
+  .upArrowDiv {
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    background: #949cc2;
   }
   
   .sliderControlDiv {
