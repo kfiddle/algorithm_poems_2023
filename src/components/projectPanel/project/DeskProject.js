@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-
-import deskStyles from './DeskProject.module.css';
-import phoneStyles from './PhoneProject.module.css';
+import styles from './DeskProject.module.css';
 
 import { useMediaQuery } from 'react-responsive';
 
-import { BiCloudLightRain, BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
+import { BiSolidDownArrow, BiSolidUpArrow } from 'react-icons/bi';
 
 const Project = ({ project, scrollBackUp }) => {
-  
-  const { title, infoBox, slides } = project;
+
+  const { infoBox, slides } = project;
   const [currentIndex, setCurrentIndex] = useState(0);
-  
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-  const styles = !isMobile ? deskStyles : phoneStyles;
 
-  const windowHeight = window.innerHeight;
-  const infoBoxElement = document.querySelector(`.${styles.infoDiv}`);
-  const infoBoxHeight = infoBoxElement ? infoBoxElement.offsetHeight : 0;
-  const imageDivHeight = !isMobile ? window.innerHeight * 0.9 : windowHeight - (windowHeight * 0.1) - infoBoxHeight;
+  const imageDivHeight =window.innerHeight * 0.9;
 
-  const top = !isMobile ? 9 : 0;
+  const top = 9;
   const scrollOutHandler = () => {
     setCurrentIndex(0);
     scrollBackUp(top);
@@ -81,7 +73,7 @@ const Project = ({ project, scrollBackUp }) => {
         <div className={styles.imagesContainer}>{gallery}</div>
       </div>
     </div>
-  );
+  )
 };
 
 export default Project;

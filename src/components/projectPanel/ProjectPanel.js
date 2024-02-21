@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
-
 import { useMediaQuery } from 'react-responsive';
-
-import Project from './project/Project';
+import DeskProject from './project/DeskProject';
 import ProjectCards from './projectCard/ProjectCards';
-
-
+import PhoneProject from './project/PhoneProject';
 
 import styles from './ProjectPanel.module.css';
 
@@ -22,13 +19,21 @@ const ProjectPanel = ({ projects }) => {
 
   const scroller = (position) => window.scrollTo({ top: position, behavior: 'smooth' });
 
+  const clickedAndPhone = clickedProject && isMobile ? true : false;
+
+  useEffect(() => {
+    if (clickedProject) console.log(clickedProject)
+  }, [clickedProject])
+
+
   return (
-    <div className={styles.outerContainer} style= {{marginTop: !isMobile ? '14vh' : ''}}>
+    <div className={styles.outerContainer} style={{ marginTop: !isMobile ? '14vh' : '' }}>
       <div style={{ height: '90vh' }}>
         <ProjectCards projects={projects} clicker={projectClicker} />
       </div>
       <div style={{ background: 'transparent' }}>
-        {clickedProject && <Project project={clickedProject} scrollBackUp={scroller} />}
+        {clickedProject && (!isMobile ? <DeskProject project={clickedProject} scrollBackUp={scroller} /> : <PhoneProject project={clickedProject} scrollBackUp={scroller} />)}
+
       </div>
     </div>
   );

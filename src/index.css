@@ -17,12 +17,14 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+
 
 @font-face {
   font-family: 'Quilon-Medium';
@@ -36,11 +38,11 @@ code {
 @font-face {
   font-family: 'Asap-Regular';
   src: url('./fonts/Asap-Regular.woff2') format('woff2'),
-       url('./fonts/Asap-Regular.woff') format('woff'),
-       url('./fonts/Asap-Regular.ttf') format('truetype');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
+    url('./fonts/Asap-Regular.woff') format('woff'),
+    url('./fonts/Asap-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
 }
 
 

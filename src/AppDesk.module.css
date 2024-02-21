@@ -1,4 +1,5 @@
 .appDiv {
+  overflow: hidden;
 }
 
 .stripesDiv {

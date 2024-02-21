@@ -25,6 +25,7 @@ import styles from './ProjectsData.module.css';
 import InfoBox from '../components/projectPanel/InfoBox';
 
 export const projects = [
+  
   {
     id: 1,
     cardImage: Wave,

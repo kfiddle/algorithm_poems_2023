@@ -1,11 +1,12 @@
 .outerContainer {
     /* display: flex; */
-    /* height: 100vh; */
+    height: 100%;
     margin-top: 10vh;
     background: rgba(56, 53, 72);
     /* border: 3px solid rgb(112, 128, 144); */
     box-shadow: 0px 3px 8px 5px rgba(236, 235, 239, 0.2);
     font-size: 14px;
+    overflow-y: auto;
   }
   
   .infoContainer {
@@ -64,32 +65,7 @@
   
     }
   }
-  
-  .arrowBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .arrowIcon {
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  
-  .arrowIcon:hover {
-    fill: rgb(147, 122, 212);
-  
-  }
-  
-  .arrow:hover {
-    border: solid lightblue;
-    box-shadow: 2px 2px 3px rgba(97, 81, 169, 0.25);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-  }
+
   
   .imagesWrapper {
     flex: 2;
@@ -105,8 +81,7 @@
     flex-direction: column;
     /* Stack images vertically */
     /* gap: 2rem; */
-    overflow: hidden;
-  
+    overflow-y: auto;
   }
   
   .imageDiv {
@@ -120,10 +95,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-y: auto;
   }
   
-  .imageDivTEST {}
   
   .image {
     width: 95%;
