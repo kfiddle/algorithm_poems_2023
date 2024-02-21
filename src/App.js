@@ -26,20 +26,6 @@ import bird12 from './assets/flyingBird/bird12.png';
 import bird13 from './assets/flyingBird/bird13.png';
 import bird14 from './assets/flyingBird/bird14.png';
 
-import CelloTitleCard from './assets/projectCardImages/CelloTitleCard.png';
-import HarmonodeTitleCard from './assets/projectCardImages/HarmonodeTitleCard.png';
-
-import harmonodeShot1 from './assets/harmonode/harmonodeShot1.png';
-import harmonodeGIF1 from './assets/harmonode/harmonodeGIF1.gif';
-import harmonodeGIF2 from './assets/harmonode/harmonodeGIF2.gif';
-
-import addGigCalendar from './assets/symCraft/addGigCalendar.png';
-import library from './assets/symCraft/library.png';
-import libraryInstEntry from './assets/symCraft/libraryInstEntry.png';
-
-import pennies1 from './assets/pennies/pennies1.png';
-import transEntry from './assets/pennies/transEntry.png';
-
 import PennyFarthing from './components/pennyFarthing/PennyFarthing';
 import Bird from './components/Bird/Bird';
 import SideBar from './components/sideBar/SideBar';

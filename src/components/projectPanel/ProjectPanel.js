@@ -21,11 +21,6 @@ const ProjectPanel = ({ projects }) => {
 
   const clickedAndPhone = clickedProject && isMobile ? true : false;
 
-  useEffect(() => {
-    if (clickedProject) console.log(clickedProject)
-  }, [clickedProject])
-
-
   return (
     <div className={styles.outerContainer} style={{ marginTop: !isMobile ? '14vh' : '' }}>
       <div style={{ height: '90vh' }}>
