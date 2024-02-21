@@ -107,9 +107,11 @@ function App() {
     setClickedChoice('');
     setIsHeaderVisible(true);
   };
+  
+  const renderClock = clickedChoice === '' || clickedChoice === ABOUTME; 
 
   return (
-    <div className={styles.appDiv}>
+    <div className={styles.appDiv} >
       <div className={styles.stripesDiv}>
         <WarrantOfficerStripes stripesHandler={stripesHandler} stripesClicked={stripesClicked} clickedChoice={clickedChoice} />
       </div>
@@ -124,7 +126,7 @@ function App() {
 
       {showPennyFarthing && <PennyFarthing smallWheel={smallWheel} bigWheel={bigWheel} pennyFrame={pennyFrame} bikePosition={bikePosition} />}
       <Bird birds={birds} />
-      <Clock />
+      {renderClock && <Clock />}
     </div>
   );
 }
