@@ -67,15 +67,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (stripesClicked) {
-      if (bikePosition > 100) {
-        setBikePosition(isMobile ? -140 : -50)
-        setShowPennyFarthing(true)
-      }
-    }
-  }, [stripesClicked])
-
-  useEffect(() => {
     const showDelay = setTimeout(() => {
       setShowPennyFarthing(true);
     }, 1500);
