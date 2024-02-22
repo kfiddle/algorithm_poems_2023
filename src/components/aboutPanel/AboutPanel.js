@@ -13,6 +13,9 @@ const AboutPanel = (props) => {
   const [leftCurtainOpacity, setLeftCurtainOpacity] = useState(0.2);
 
   const isSmallish = useMediaQuery({ maxWidth: 1240 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const small = useMediaQuery({ minWidth: 768, maxWidth: 992 });
+
 
   const styles = !isSmallish ? deskStyles : phoneStyles;
 
@@ -37,7 +40,6 @@ const AboutPanel = (props) => {
           opacity: leftCurtainOpacity,
         }}
       >
-        {/* <img src={props.headshot} className={styles.headShot} style={{ filter: `brightness(${imageFilter}%)` }} /> */}
         <img src={props.headshot} className={styles.headShot} />
       </div>
       <div className={styles.storyCurtain} style={{ transform: `translateX(${rightCurtainPlace}vw)` }}>
@@ -52,9 +54,4 @@ const AboutPanel = (props) => {
 
 export default AboutPanel;
 
-// When I was a kid, I loved poetry.
-// These days, I design full stack apps and websites. I am happiest working in React and Node.js or Java.
-// <br />I also prefer building frontends that look original- not like so many of the cookie cutter sites we
-// see every day.
-// ...and I've discovered that a world of digital poetry is possible <br />
-// in things like Javascript and Java.
+

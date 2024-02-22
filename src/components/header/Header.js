@@ -7,11 +7,21 @@ import WarrantOfficerStripes from '../warrantOfficerStripes/WarrantOfficerStripe
 import deskStyles from './HeaderDesk.module.css';
 import phoneStyles from './HeaderPhone.module.css';
 
+// *** need some extra responsiveness in this one, so 
+// in addition to both CSS files, adding some inline details below
+
+// extra small is < 576
+// small is 576 to 768
+// medium is 768 to 992
+// large is 992 to 1200
+// extra large is 1200+
+
 const Header = ({ isVisible }) => {
   const [showSubtitle, setShowSubtitle] = useState(false);
   const [isVisibleClass, setIsVisibleClass] = useState('');
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const small = useMediaQuery({ minWidth: 768, maxWidth: 992 });
   const styles = !isMobile ? deskStyles : phoneStyles;
 
 
@@ -28,7 +38,6 @@ const Header = ({ isVisible }) => {
     if (!isVisible) setIsVisibleClass(styles.hidden);
   }, [isVisible]);
 
-
   const letters = ['K', 'e', 'n', ' ', 'J', 'o', 'h', 'n', 's', 't', 'o', 'n',]
 
   const upperStyle = `${styles.flyInLetter} ${styles.caps}`;
@@ -38,14 +47,25 @@ const Header = ({ isVisible }) => {
     animationDelay: `${index * 0.08}s`
   }} className={letter === letter.toUpperCase() ? upperStyle : lowerStyle}>{letter}</span>)
 
+  const headerDivStyles = {};
+  const headerStyles = {};
+  const pStyles = {};
+
+  if (small) { 
+    headerDivStyles.marginRight = '10rem'
+    headerDivStyles.marginTop = '2rem'
+    headerStyles.fontSize = '2rem'; 
+    pStyles.fontSize = '2rem';
+  }
+
   return (
     <div className={styles.headerContainer}>
-      <div className={styles.nameAndSubTitle}>
-        <h1 className={`${styles.header} ${isVisibleClass}`}>
+      <div className={styles.nameAndSubTitle} style={headerDivStyles}>
+        <h1 className={`${styles.header} ${isVisibleClass}`} style={headerStyles}>
           {flyInLetters}
         </h1>
         <div className={isVisibleClass}>
-          <p className={styles.subtitle}>Full Stack Developer</p>
+          <p className={styles.subtitle} style={pStyles}>Full Stack Developer</p>
         </div>
       </div>
     </div>
