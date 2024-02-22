@@ -4,7 +4,6 @@ import { LuArrowBigUpDash } from "react-icons/lu";
 import styles from "./PhoneProject.module.css";
 
 const PhoneProject = ({ project, scrollBackUp }) => {
-    console.log("we here");
 
     const { infoBox, slides } = project;
     const [currentIndex, setCurrentIndex] = useState(0);

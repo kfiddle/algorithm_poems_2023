@@ -1,0 +1,128 @@
+.outerContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    height: 20vw;
+    width: 20vw;
+    background: linear-gradient(to bottom, rgb(59, 4, 91), rgb(188, 102, 188), rgb(176, 103, 14));
+    border: solid rgb(74, 72, 72) 2px;
+    box-shadow: 1px 1px 1px 1px rgb(99, 95, 95, 0.2);
+    animation: slide-in linear 3s;
+    /* transform: translateX(0vw); */
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(35vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+
+}
+
+@keyframes colorCycle2 {
+    0% {
+        background: violet;
+    }
+
+    12.5% {
+        background: green;
+    }
+
+    25% {
+        background: red;
+    }
+
+    37.5% {
+        background: orange;
+    }
+
+    50% {
+        background: yellow;
+    }
+
+    62% {
+        background: green;
+    }
+
+    75% {
+        background: blue;
+    }
+
+    87% {
+        background: indigo;
+    }
+
+    100% {
+        background: violet;
+    }
+}
+
+
+
+.outerCircle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: colorCycle2 60s linear infinite;
+}
+
+
+
+.blackCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.movingCircle {
+    /* position: absolute;
+    right: 0;
+    bottom: 0%;  */
+    width: 60%;
+    /* Adjust size as needed */
+    height: 60%;
+    /* Adjust size as needed */
+    border-radius: 50%;
+    background: linear-gradient(rgb(246, 3, 3), white);
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.hourHand {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to right, transparent, rgb(8, 93, 205));
+    opacity: 0.8;
+    transform-origin: 0% 50%;
+}
+
+.minuteHand {
+    position: absolute;
+    width: 140%;
+    height: 20%;
+    background: linear-gradient(to right, transparent, lavender);
+    opacity: 0.8;
+    transform-origin: 0% 50%;
+}
