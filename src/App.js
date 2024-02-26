@@ -129,3 +129,11 @@ function App() {
 }
 
 export default App;
+
+// screen sizes to ponder:
+
+// extra small is < 576
+// small is 576 to 768
+// medium is 768 to 992
+// large is 992 to 1200
+// extra large is 1200+

@@ -1,0 +1,6 @@
+feb 22
+
+1. pushed to new branch kjFeb22MAcChanges, so ** merge with main FIRST and deal with this
+2. revisit responsive bike. Start from AboutMe in tablet view, like Ipad mini
+3. Consider global responsive styles
+4. Why is image width not responding in AboutMe?
