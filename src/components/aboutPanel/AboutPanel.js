@@ -32,7 +32,7 @@ const AboutPanel = (props) => {
   if (extraSmall) {
     headShotStyles.width = '50vw';
     storyCurtainStyles.fontSize='16px'
-    storyCurtainStyles.top = '20vh';
+    storyCurtainStyles.top = '30vh';
     storyCurtainStyles.lineHeight = '1.4rem';
     storyCurtainStyles.color = 'white';
     storyCurtainStyles.margin = '0';
@@ -41,10 +41,10 @@ const AboutPanel = (props) => {
   }
 
   if (medium) {
-    storyCurtainStyles.fontSize = '17px'
+    storyCurtainStyles.fontSize = '18px'
     storyCurtainStyles.margin = '4rem 5rem 0 0';
     storyCurtainStyles.lineHeight = '2.3rem';
-    storyCurtainStyles.color = 'darkBlue';
+    storyCurtainStyles.color = 'white';
     headShotStyles.width = '40vw';
   }
 
