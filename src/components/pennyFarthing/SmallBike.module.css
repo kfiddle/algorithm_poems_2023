@@ -1,0 +1,49 @@
+.bikeContainer {
+    position: fixed;
+    bottom: 10vh;
+    z-index: 3;
+    animation: rideWillow 15s linear;
+  }
+  
+  .bigWheel {
+    position: relative;
+    animation: spin infinite 8s linear;
+  }
+  
+  .pennyFrame {
+    position: relative;
+    transform: translate(-30%, 85%);
+    z-index: 3;
+  }
+  
+  .smallWheel {
+    position: relative;
+    animation: smallSpin infinite 4s linear;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes smallSpin {
+    from {
+      transform: translate(-65%, 570%) rotate(0deg);
+    }
+    to {
+      transform: translate(-65%, 570%) rotate(360deg);
+    }
+  }
+  
+  /* @keyframes rideWillow {
+    from {
+      transform: translateX(-60vw);
+    }
+    to {
+      transform: translateX(200vw);
+    }
+  } */
